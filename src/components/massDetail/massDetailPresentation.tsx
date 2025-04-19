@@ -1,13 +1,9 @@
-// MassDetailPresentation.tsx - UI Rendering
-import React from 'react';
-import { IUnit, ITrait, IAbility, ISoulAbility, IHouse, IMass } from '../../models';
+import { IMass } from '../../models';
 import { getUnitType } from '../../services/UnitService';
-import { getUnitPortrait, getUnitImage } from '../../services/ImageService';
-import { JSX } from 'react/jsx-runtime';
 import { Link } from 'react-router-dom';
 import { getHouse } from '../../services/HouseService';
 import { calculateDarkPower, getMalaceLevel } from '../../services/MassService';
-import UnitDetailContainer from '../unitDetail/unitDetailContainer';
+import UnitDetailContainer from '../unitDetail/UnitDetailContainer';
 
 interface MassDetailPresentationProps {
   mass: IMass;

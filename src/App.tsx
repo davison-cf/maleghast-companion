@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { IMass } from './models';
 import storageService from './services/StorageService';
 import MassList from './components/MassList';
-import MassDetail from './components/MassDetail';
+import MassDetailContainer from './components/massDetail/MassDetailContainer';
 import MassBuilder from './components/MassBuilder';
 import ThemeSelector from './components/ThemeSelector';
 
@@ -72,7 +72,7 @@ function App() {
             />
             <Route 
               path="/masses/:id" 
-              element={<MassDetail masses={masses} onUpdate={handleUpdate} onDelete={handleDelete} />} 
+              element={<MassDetailContainer masses={masses} onUpdate={handleUpdate} onDelete={handleDelete} />} 
             />
             <Route 
               path="/builder" 

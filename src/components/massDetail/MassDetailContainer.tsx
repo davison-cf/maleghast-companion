@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { IMass } from '../../models';
-import MassDetailPresentation from './massDetailPresentation';
+import MassDetailPresentation from './MassDetailPresentation';
 
 interface MassDetailContainerProps {
   masses: IMass[];
