@@ -44,7 +44,7 @@ function mapRawUnitsToTypedUnits(rawUnits: any[]): IUnit[] {
           }
         }
       }  
-    }
+    }    
     else
     {
       for (const upgrade of rawUnit.upgrades || []) {
@@ -146,10 +146,8 @@ export function calculateUnitDarkPower(unit: IUnit): number
 
     sum = Math.max(abilities + soulAbilities + traits - 3, 0)
   }
-  else
+  else 
   {
-    sum += unit.selectedUpgrades?.abilities.length ?? 0
-    sum += unit.selectedUpgrades?.soulAbilities.length ?? 0
     sum += unit.selectedUpgrades?.traits.length ?? 0
   }
 
