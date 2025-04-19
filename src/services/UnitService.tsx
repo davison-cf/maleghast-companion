@@ -4,6 +4,10 @@ import { UpgradeType, HouseId, UnitTypeId } from "../models/enums";
 
 import carcassUnits from '../data/units/carcass-units.json'
 import goregrindersUnits from '../data/units/goregrinders-units.json'
+import gargamoxUnits from '../data/units/gargamox-units.json'
+import deadsoulsUnits from '../data/units/deadsouls-units.json'
+import abhorrersUnits from '../data/units/abhorrers-units.json'
+import igorriUnits from '../data/units/igorri-units.json'
 import unitTypes from '../data/unitTypes.json'
 import { IUnitType } from "../models/UnitType";
 
@@ -49,10 +53,7 @@ function mapRawUnitsToTypedUnits(rawUnits: any[]): IUnit[] {
       for (const upgrade of rawUnit.upgrades || []) {
         upgrades.traits.push(upgrade as ITrait);
       }
-    }
-
-
-    
+    }    
     const unit: IUnit = {
       name: rawUnit.name,
       id: rawUnit.id,
@@ -78,22 +79,34 @@ export function getUnitsForHouse(house: HouseId): IUnit[]
 {
   var units: IUnit[] = []
   
-  if(house === HouseId.Goregrinders || house === HouseId.Heretic) 
-  {
-    const mappedUnits = mapRawUnitsToTypedUnits(goregrindersUnits);
-    for(const unit of mappedUnits)
-    {
-      units.push(unit)
-    }
-  }
-
   if(house === HouseId.Carcass || house === HouseId.Heretic) 
   {
-    const mappedUnits = mapRawUnitsToTypedUnits(carcassUnits);
-    for(const unit of mappedUnits)
-    {
-      units.push(unit)
-    }
+    units = units.concat(mapRawUnitsToTypedUnits(carcassUnits));
+  }
+
+  if(house === HouseId.Goregrinders || house === HouseId.Heretic) 
+  {
+    units = units.concat(mapRawUnitsToTypedUnits(goregrindersUnits));
+  }
+
+  if(house === HouseId.Gargamox || house === HouseId.Heretic) 
+  {
+    units = units.concat(mapRawUnitsToTypedUnits(gargamoxUnits));
+  }
+
+  if(house === HouseId.Deadsouls || house === HouseId.Heretic) 
+  {
+    units = units.concat(mapRawUnitsToTypedUnits(deadsoulsUnits));
+  }
+
+  if(house === HouseId.Abhorrers || house === HouseId.Heretic) 
+  {
+    units = units.concat(mapRawUnitsToTypedUnits(abhorrersUnits));
+  }
+
+  if(house === HouseId.Igorri || house === HouseId.Heretic) 
+  {
+    units = units.concat(mapRawUnitsToTypedUnits(igorriUnits));
   }
 
   return units;
