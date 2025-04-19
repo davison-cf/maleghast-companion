@@ -1,4 +1,4 @@
-import { IMass } from '../../models';
+import { IMass, IUnit } from '../../models';
 import { getUnitType } from '../../services/UnitService';
 import { Link } from 'react-router-dom';
 import { getHouse } from '../../services/HouseService';
@@ -10,13 +10,17 @@ interface MassDetailPresentationProps {
   expandedUnitIndex: number | null;
   handleDelete: () => void;
   toggleUnit: (index: number) => void;
+  onUpdate: (mass: IMass) => void;
+  onUnitUpdate?: (updatedUnit: IUnit) => void;
 }
 
 function MassDetailPresentation({
   mass,
   expandedUnitIndex,
   handleDelete,
-  toggleUnit
+  toggleUnit,
+  onUpdate,
+  onUnitUpdate
 }: MassDetailPresentationProps) {
   return (
     <div className="mass-detail">
@@ -24,6 +28,7 @@ function MassDetailPresentation({
         <h2>{mass.name} {mass.id}</h2>
         <div className="header-actions">
           <Link to={`/builder/${mass.id}`} className="button">Edit Mass</Link>
+          <button onClick={() => onUpdate(mass)} className="button delete">Save</button>
           <button onClick={handleDelete} className="button delete">Delete</button>
         </div>
       </div>
@@ -78,7 +83,7 @@ function MassDetailPresentation({
                 </div>
                 
                 {expandedUnitIndex === index && (
-                  <UnitDetailContainer {...{unit: unit, mass: mass}}/>
+                  <UnitDetailContainer {...{unit: unit, mass: mass, onUnitUpdate}}/>
                 )}
               </div>
             ))}

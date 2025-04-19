@@ -13,6 +13,7 @@ interface UnitDetailPresentationProps {
   isTraitUpgradeSelected: (traitName: string) => boolean;
   isAbilityUpgradeSelected: (abilityName: string) => boolean;
   isSoulAbilityUpgradeSelected: (soulAbilityName: string) => boolean;
+  onUnitUpdate?: (updatedUnit: IUnit) => void;
 }
 
 function UnitDetailPresentation({

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { IMass } from '../../models';
+import { IMass, IUnit } from '../../models';
 import MassDetailPresentation from './MassDetailPresentation';
 import { calculatePoints } from '../../services/UnitService';
 
@@ -10,7 +10,7 @@ interface MassDetailContainerProps {
   onDelete: (id: string) => void;
 }
 
-function MassDetailContainer({ masses, onDelete }: MassDetailContainerProps) {
+function MassDetailContainer({ masses, onDelete, onUpdate }: MassDetailContainerProps) {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   
@@ -33,6 +33,14 @@ function MassDetailContainer({ masses, onDelete }: MassDetailContainerProps) {
       }
     }
   };
+
+  const handleUnitUpdate = (unit: IUnit) =>
+  {
+    const index = mass.units.findIndex(u => u.id === unit.id);
+    if(index !== -1) {
+      mass.units[index] = unit;
+    }
+  }
   
   const toggleUnit = (index: number) => {
     if (expandedUnitIndex === index) {
@@ -48,6 +56,8 @@ function MassDetailContainer({ masses, onDelete }: MassDetailContainerProps) {
       expandedUnitIndex={expandedUnitIndex}
       handleDelete={handleDelete}
       toggleUnit={toggleUnit}
+      onUpdate={onUpdate}
+      onUnitUpdate={handleUnitUpdate}
     />
   );
     

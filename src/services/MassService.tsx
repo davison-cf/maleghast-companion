@@ -42,5 +42,5 @@ export function calculateDarkPower(mass: IMass): number
 export function getMalaceLevel(mass: IMass):  IMalaceLevel
 {
   const dp = calculateDarkPower(mass);
-  return MalaceLevels.find(level => level.darkPower <= dp) as IMalaceLevel
+  return MalaceLevels.slice().reverse().find(level => level.darkPower <= dp) as IMalaceLevel
 }
