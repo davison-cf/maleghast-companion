@@ -1,1 +1,55 @@
-[{}]
+[
+  {
+    "name": "Gunwight",
+    "id": "gunwight",
+    "type": "thrall",
+    "house": "carcass",
+    "mv": 2,
+    "hp": 2,
+    "df": 4,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Formation",
+        "id": "formation",
+        "description": ""
+      },
+      {
+        "name": "Thrall",
+        "id": "thrallTrait",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "OL45",
+        "id": "ol45",
+        "type": "Attack, range 2-3, reload",
+        "description": "On hit: 1 damage, ignoring armor. Headshot: inflict 1 vulnerable"
+      },
+      {
+        "name": "Baton",
+        "id": "baton",
+        "type": "Push, melee",
+        "description": "Effect: Push 1 and (3+) inflict 1 vulnerable."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Brace",
+        "id": "brace",
+        "description": "While in cover, attacks gain +1 max range and push 1 on hit."
+      },
+      {
+        "name": "Tactical Reload",
+        "id": "tacticalReload",
+        "description": "Gain Headshot: reload and gain 1 strength"
+      },
+      {
+        "name": "Scavenge Ammo",
+        "id": "scavengeAmmo",
+        "description": "May consume one adjacent corpse before or after ACTing to reload and gain 1 strength."
+      }
+    ]
+  }
+]

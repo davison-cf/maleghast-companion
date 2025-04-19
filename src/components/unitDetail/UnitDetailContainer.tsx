@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { IMass, IUnit, ITrait, IAbility, ISoulAbility } from '../../models';
 import UnitDetailPresentation from './UnitDetailPresentation';
 import { UnitTypeId } from '../../models/enums';
+import NecromancerDetailPresentation from './NecromancerDetailPresentation';
 
 interface UnitDetailContainerProps {
   unit: IUnit;
@@ -149,14 +150,6 @@ function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerPr
     return <div>Unit not found</div>;
   }
 
-  if(localUnit.type === UnitTypeId.Necromancer) {
-    return(
-      <>
-        {/* <NecromancerDetail {...{unit}}/> */}
-      </>
-    );
-  }
-
   const keywords = ['on hit', 'effect', 'headshot', 'effect'];
   const renderAbilityText = (text: string) => {
     const keywordRegex = new RegExp('('+keywords.join("|")+')' , 'gi');
@@ -174,18 +167,35 @@ function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerPr
     );
   };
 
-  return (
-    <UnitDetailPresentation
-      unit={localUnit}
-      renderAbilityText={renderAbilityText}
-      toggleTraitUpgrade={toggleTraitUpgrade}
-      toggleAbilityUpgrade={toggleAbilityUpgrade}
-      toggleSoulAbilityUpgrade={toggleSoulAbilityUpgrade}
-      isTraitUpgradeSelected={isTraitUpgradeSelected}
-      isAbilityUpgradeSelected={isAbilityUpgradeSelected}
-      isSoulAbilityUpgradeSelected={isSoulAbilityUpgradeSelected}
-    />
-  );
+  if(localUnit.type === UnitTypeId.Necromancer)
+  {
+    return (
+      <NecromancerDetailPresentation
+        unit={localUnit}
+        renderAbilityText={renderAbilityText}
+        toggleTraitUpgrade={toggleTraitUpgrade}
+        toggleAbilityUpgrade={toggleAbilityUpgrade}
+        toggleSoulAbilityUpgrade={toggleSoulAbilityUpgrade}
+        isTraitUpgradeSelected={isTraitUpgradeSelected}
+        isAbilityUpgradeSelected={isAbilityUpgradeSelected}
+        isSoulAbilityUpgradeSelected={isSoulAbilityUpgradeSelected}
+      />
+    );
+  }
+  else{
+    return (
+      <UnitDetailPresentation
+        unit={localUnit}
+        renderAbilityText={renderAbilityText}
+        toggleTraitUpgrade={toggleTraitUpgrade}
+        toggleAbilityUpgrade={toggleAbilityUpgrade}
+        toggleSoulAbilityUpgrade={toggleSoulAbilityUpgrade}
+        isTraitUpgradeSelected={isTraitUpgradeSelected}
+        isAbilityUpgradeSelected={isAbilityUpgradeSelected}
+        isSoulAbilityUpgradeSelected={isSoulAbilityUpgradeSelected}
+      />
+    );
+  }
 }
 
 export default UnitDetailContainer;
