@@ -313,7 +313,7 @@ body {
 
 .stat-item {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .mass-description {
