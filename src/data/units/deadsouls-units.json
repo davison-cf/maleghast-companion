@@ -1,18 +1,18 @@
 [
   {
-    "name": "Gunwight",
-    "id": "gunwight",
+    "name": "Sacrifice",
+    "id": "sacrifice",
     "type": "thrall",
-    "house": "carcass",
-    "mv": 2,
+    "house": "deadsouls",
+    "mv": 4,
     "hp": 2,
     "df": 4,
     "armor": "",
     "traits": [
       {
-        "name": "Formation",
-        "id": "formation",
-        "description": ""
+        "name": "Inverted Crucifix",
+        "id": "invertedCrucifix",
+        "description": "When slain, leaves a space of adverse terrain or (4+) a wall instead of a corpse"
       },
       {
         "name": "Thrall",
@@ -22,33 +22,33 @@
     ],
     "abilities": [
       {
-        "name": "OL45",
-        "id": "ol45",
-        "type": "Attack, range 2-3, reload",
-        "description": "On hit: 1 damage, ignoring armor. Headshot: inflict 1 vulnerable"
+        "name": "Beckon",
+        "id": "beckon",
+        "type": "Range 2-3",
+        "description": "Effect: Pull 1. Ignores line of sight."
       },
       {
-        "name": "Baton",
-        "id": "baton",
-        "type": "Push, melee",
-        "description": "Effect: Push 1 and (3+) inflict 1 vulnerable."
+        "name": "Shudder",
+        "id": "shudder",
+        "type": "Attack, melee",
+        "description": "On hit: 1 damage and (4+) Dooms unit."
       }
     ],
     "upgrades": [
       {
-        "name": "Brace",
-        "id": "brace",
-        "description": "While in cover, attacks gain +1 max range and push 1 on hit."
+        "name": "Squirm",
+        "id": "squirm",
+        "description": "May move through walls"
       },
       {
-        "name": "Tactical Reload",
-        "id": "tacticalReload",
-        "description": "Gain Headshot: reload and gain 1 strength"
+        "name": "Dead Grasp",
+        "id": "deadGrasp",
+        "description": "Beckon has no maximum range against isolated units"
       },
       {
-        "name": "Scavenge Ammo",
-        "id": "scavengeAmmo",
-        "description": "May consume one adjacent corpse before or after ACTing to reload and gain 1 strength."
+        "name": "Impending Death",
+        "id": "impendingDeath",
+        "description": "Beckon inflicts 1 weak on isolated units."
       }
     ]
   }
