@@ -1,49 +1,27 @@
-import React, { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { IMass } from '../models';
-import { getHouse } from '../services/HouseService';
-import { getUnitType } from '../services/UnitService';
-import { calculateDarkPower, getMalaceLevel } from '../services/MassService';
+// MassDetailPresentation.tsx - UI Rendering
+import React from 'react';
+import { IUnit, ITrait, IAbility, ISoulAbility, IHouse, IMass } from '../../models';
+import { getUnitType } from '../../services/UnitService';
+import { getUnitPortrait, getUnitImage } from '../../services/ImageService';
+import { JSX } from 'react/jsx-runtime';
+import { Link } from 'react-router-dom';
+import { getHouse } from '../../services/HouseService';
+import { calculateDarkPower, getMalaceLevel } from '../../services/MassService';
+import UnitDetailContainer from '../unitDetail/unitDetailContainer';
 
-// Assume these functions exist to get images
-import { getUnitPortrait, getUnitImage } from '../services/ImageService';
-import UnitDetail from './UnitDetail';
-
-interface MassDetailProps {
-  masses: IMass[];
-  onUpdate: (mass: IMass) => void;
-  onDelete: (id: string) => void;
+interface MassDetailPresentationProps {
+  mass: IMass;
+  expandedUnitIndex: number | null;
+  handleDelete: () => void;
+  toggleUnit: (index: number) => void;
 }
 
-function MassDetail({ masses, onDelete }: MassDetailProps) {
-  const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
-  // State to track which unit is expanded
-  const [expandedUnitIndex, setExpandedUnitIndex] = useState<number | null>(null);
-  
-  const mass = masses.find(a => a.id === id);
-  
-  if (!mass) {
-    return <div>Mass not found</div>;
-  }
-  
-  const handleDelete = () => {
-    if(mass.id) {
-      if (window.confirm('Are you sure you want to delete this mass?')) {
-        onDelete(mass.id);
-        navigate('/masses');
-      }
-    }
-  };
-  
-  const toggleUnit = (index: number) => {
-    if (expandedUnitIndex === index) {
-      setExpandedUnitIndex(null);
-    } else {
-      setExpandedUnitIndex(index);
-    }
-  };
-  
+function MassDetailPresentation({
+  mass,
+  expandedUnitIndex,
+  handleDelete,
+  toggleUnit
+}: MassDetailPresentationProps) {
   return (
     <div className="mass-detail">
       <div className="detail-header">
@@ -108,7 +86,7 @@ function MassDetail({ masses, onDelete }: MassDetailProps) {
                 </div>
                 
                 {expandedUnitIndex === index && (
-                  <UnitDetail {...{unit: unit, mass: mass}}/>
+                  <UnitDetailContainer {...{unit: unit, mass: mass}}/>
                 )}
               </div>
             ))}
@@ -123,4 +101,4 @@ function MassDetail({ masses, onDelete }: MassDetailProps) {
   );
 }
 
-export default MassDetail;
+export default MassDetailPresentation;
