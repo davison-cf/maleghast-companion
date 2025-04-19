@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { IMass } from '../../models';
 import MassDetailPresentation from './MassDetailPresentation';
+import { calculatePoints } from '../../services/UnitService';
 
 interface MassDetailContainerProps {
   masses: IMass[];
@@ -17,11 +18,13 @@ function MassDetailContainer({ masses, onDelete }: MassDetailContainerProps) {
   const [expandedUnitIndex, setExpandedUnitIndex] = useState<number | null>(null);
   
   const mass = masses.find(a => a.id === id);
-  
+ 
   if (!mass) {
     return <div>Mass not found</div>;
   }
   
+  mass.points = calculatePoints(mass.units)
+
   const handleDelete = () => {
     if(mass.id) {
       if (window.confirm('Are you sure you want to delete this mass?')) {

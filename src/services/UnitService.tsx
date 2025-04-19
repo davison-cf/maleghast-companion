@@ -12,9 +12,6 @@ import unitTypes from '../data/unitTypes.json'
 import { IUnitType } from "../models/UnitType";
 
 
-export interface UnitService {
-  
-}
 function mapRawUnitsToTypedUnits(rawUnits: any[]): IUnit[] {
   var units: IUnit[] = []
   
