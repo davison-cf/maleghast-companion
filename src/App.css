@@ -741,18 +741,10 @@ input:focus, textarea:focus, select:focus {
   transition: background-color 0.2s ease;
 }
 
-.upgrade:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
 .upgrade-selected {
   background-color: rgba(0, 100, 255, 0.1);
-  border-left: 3px solid rgb(0, 100, 255);
 }
 
-.upgrade-name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
+.upgrade-name > input {
+  display: none;
 }
