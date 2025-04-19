@@ -84,7 +84,7 @@ function UnitDetailPresentation({
             {/* Trait Upgrades */}
             {unit.upgrades.traits && unit.upgrades.traits.length > 0 && (
               <div className="upgrade-section">
-                <h4 className="upgrade-section-title">Trait Upgrades</h4>
+                <h4 className="upgrade-section-title">Trait Upgrades <span className='reminder'>Select at least 1</span></h4>
                 <div className="upgrades-grid">
                   {unit.upgrades.traits.map((trait, index) => (
                     <div 
@@ -111,7 +111,7 @@ function UnitDetailPresentation({
             {/* Ability Upgrades */}
             {unit.upgrades.abilities && unit.upgrades.abilities.length > 0 && (
               <div className="upgrade-section">
-                <h4 className="upgrade-section-title">Ability Upgrades</h4>
+                <h4 className="upgrade-section-title">Ability Upgrades <span className='reminder'>Select at least 1</span></h4>
                 <div className="upgrades-grid">
                   {unit.upgrades.abilities.map((ability, index) => (
                     <div 
@@ -138,7 +138,7 @@ function UnitDetailPresentation({
             {/* Soul Ability Upgrades */}
             {unit.upgrades.soulAbilities && unit.upgrades.soulAbilities.length > 0 && (
               <div className="upgrade-section">
-                <h4 className="upgrade-section-title">Soul Ability Upgrades</h4>
+                <h4 className="upgrade-section-title">Soul Ability Upgrades <span className='reminder'>Select at least 1</span></h4>
                 <div className="upgrades-grid">
                   {unit.upgrades.soulAbilities.map((soulAbility, index) => (
                     <div 

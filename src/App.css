@@ -658,20 +658,18 @@ input:focus, textarea:focus, select:focus {
 /* Upgrades section */
 .unit-upgrades {
   border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
 }
 
 .upgrades-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: #999;
+
 }
 
 .upgrade {
   padding: 0.5rem;
-}
-.upgrade:not(:last-child) {
-  border-right: 1px solid #ddd;
+  margin: 0.1rem;
+  background-color: #999;
 }
 
 .upgrade-name {
@@ -681,6 +679,13 @@ input:focus, textarea:focus, select:focus {
   background-color: #666;
   padding: 0.25rem;
   border-radius: 4px;
+}
+
+.upgrade-section-title > .reminder {
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+  opacity: 0.8;
+  font-weight: lighter;
 }
 
 .upgrade-description {

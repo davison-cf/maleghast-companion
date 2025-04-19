@@ -1,5 +1,5 @@
 import { IUnit } from "../models";
-import { IUpgrades, IAbility, ITrait } from "../models/UnitData";
+import { IUpgrades, IAbility, ITrait, ISoulAbility } from "../models/UnitData";
 import { UpgradeType, HouseId, UnitTypeId } from "../models/enums";
 
 import carcassUnits from '../data/units/carcass-units.json'
@@ -34,7 +34,7 @@ function mapRawUnitsToTypedUnits(rawUnits: any[]): IUnit[] {
         else if (upgradeType.type as UpgradeType === UpgradeType.SoulAbility)
         {
           for (const upgrade of upgradeType.upgrade || []) {
-            upgrades.abilities.push(upgrade as IAbility);
+            upgrades.soulAbilities.push(upgrade as ISoulAbility);
           }
         }
         else if (upgradeType.type as UpgradeType === UpgradeType.Trait)
@@ -128,11 +128,30 @@ export function calculatePoints(units: IUnit[])
   return sum;
 }
 
+export function calculateUnitCount(units: IUnit[])
+{
+  let sum = 0;
+  units.forEach(unit => sum += unit.quantity )
+  return sum;
+}
+
 export function calculateUnitDarkPower(unit: IUnit): number
 {
   var sum = 0;
-  sum += unit.selectedUpgrades?.abilities.length ?? 0
-  sum += unit.selectedUpgrades?.soulAbilities.length ?? 0
-  sum += unit.selectedUpgrades?.traits.length ?? 0
+  if(unit.type === UnitTypeId.Necromancer)
+  {
+    let abilities = unit.selectedUpgrades?.abilities.length ?? 0
+    let soulAbilities = unit.selectedUpgrades?.soulAbilities.length ?? 0
+    let traits = unit.selectedUpgrades?.traits.length ?? 0
+
+    sum = Math.max(abilities + soulAbilities + traits - 3, 0)
+  }
+  else
+  {
+    sum += unit.selectedUpgrades?.abilities.length ?? 0
+    sum += unit.selectedUpgrades?.soulAbilities.length ?? 0
+    sum += unit.selectedUpgrades?.traits.length ?? 0
+  }
+
   return sum;
 }

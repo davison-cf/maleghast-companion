@@ -1,5 +1,5 @@
 import { IMass, IUnit } from '../../models';
-import { getUnitType } from '../../services/UnitService';
+import { calculateUnitCount, getUnitType } from '../../services/UnitService';
 import { Link } from 'react-router-dom';
 import { getHouse } from '../../services/HouseService';
 import { calculateDarkPower, getMalaceLevel } from '../../services/MassService';
@@ -40,7 +40,7 @@ function MassDetailPresentation({
         </div>
         <div className="stat-item">
           <span>Units:</span>
-          <span>{mass.units?.length || 0}</span>
+          <span>{calculateUnitCount(mass.units) || 0}</span>
         </div>
         <div className="stat-item">
           <span>Dark Power:</span>
