@@ -1,0 +1,44 @@
+[
+  {
+    "id": 0,
+    "name": "Spite",
+    "darkPower": 0,
+    "unitUpgradeLimit": 1,
+    "additionalRules": ""
+  },
+  {
+    "id": 1,
+    "name": "Loathing",
+    "darkPower": 4,
+    "unitUpgradeLimit": 1,
+    "additionalRules": ""
+  },
+  {
+    "id": 2,
+    "name": "Hatred",
+    "darkPower": 7,
+    "unitUpgradeLimit": 1,
+    "additionalRules": ""
+  },
+  {
+    "id": 3,
+    "name": "Hell",
+    "darkPower": 10,
+    "unitUpgradeLimit": 1,
+    "additionalRules": ""
+  },
+  {
+    "id": 4,
+    "name": "Ultrahell",
+    "darkPower": 12,
+    "unitUpgradeLimit": 2,
+    "additionalRules": "Units can choose two upgrades."
+  },
+  {
+    "id": 9999,
+    "name": "Gigahell",
+    "darkPower": 9999,
+    "unitUpgradeLimit": 2,
+    "additionalRules": "Units can choose two upgrades. Fuck you."
+  }
+]

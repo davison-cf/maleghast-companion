@@ -1,0 +1,443 @@
+[
+  {
+    "name": "Gunwight",
+    "id": "gunwight",
+    "type": "thrall",
+    "house": "carcass",
+    "mv": 2,
+    "hp": 2,
+    "df": 4,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Formation",
+        "id": "formation",
+        "description": ""
+      },
+      {
+        "name": "Thrall",
+        "id": "thrallTrait",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "OL45",
+        "id": "ol45",
+        "type": "Attack, range 2-3, reload",
+        "description": "On hit: 1 damage, ignoring armor. Headshot: inflict 1 vulnerable"
+      },
+      {
+        "name": "Baton",
+        "id": "baton",
+        "type": "Push, melee",
+        "description": "Effect: Push 1 and (3+) inflict 1 vulnerable."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Brace",
+        "id": "brace",
+        "description": "While in cover, attacks gain +1 max range and push 1 on hit."
+      },
+      {
+        "name": "Tactical Reload",
+        "id": "tacticalReload",
+        "description": "Gain Headshot: reload and gain 1 strength"
+      },
+      {
+        "name": "Scavenge Ammo",
+        "id": "scavengeAmmo",
+        "description": "May consume one adjacent corpse before or after ACTing to reload and gain 1 strength."
+      }
+    ]
+  },
+  {
+    "name": "Enforcer",
+    "id": "enforcer",
+    "type": "scion",
+    "house": "carcass",
+    "mv": 3,
+    "hp": 4,
+    "df": 3,
+    "armor": "PHYS",
+    "traits": [
+      {
+        "name": "Formation",
+        "id": "formation",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Skull Crack",
+        "id": "skullCrack",
+        "type": "Attack, melee, push",
+        "description": "On hit: 2 damage and push 1. Headshot: push 2"
+      },
+      {
+        "name": "Flashbang",
+        "id": "flashbang",
+        "type": "Range 2-3, Reload, splash",
+        "description": "Effect: 1 fire damage and 1 vulnerable, then Splash (target): push 1 away from target."
+      },
+      {
+        "name": "Shieldwall",
+        "id": "shieldwall",
+        "type": "Self",
+        "description": "Effect: Until start of this unit’s next turn, this unit cannot MOVE, step, or be pushed or pulled; gains cover, and grants cover to adjacent allies from all directions."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Shield Charge",
+        "id": "shieldCharge",
+        "description": "Unit may step 1 before using Skull Crack and it gains splash (self) push foes 1"
+      },
+      {
+        "name": "Bulwark",
+        "id": "bulwark",
+        "description": "Shieldwall also clears up to two negative tokens on self or adjacent allies."
+      },
+      {
+        "name": "Bone Dust Napalm",
+        "id": "boneDustNapalm",
+        "description": "Flashbang deals 1 splash fire damage but no longer deals vuln or damage to its main target."
+      }
+    ]
+  },
+  {
+    "name": "Ammo Goblin",
+    "id": "ammoGoblin",
+    "type": "freak",
+    "house": "carcass",
+    "mv": 3,
+    "hp": 4,
+    "df": 4,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Formation",
+        "id": "formation",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Regurgitate Ammo",
+        "id": "regurgitateAmmo",
+        "type": "Range 3",
+        "description": "Effect: A unit in range reloads and gains one, (6+) or two strength."
+      },
+      {
+        "name": "Bone Shards",
+        "id": "boneShards",
+        "type": "Curse, Range 3",
+        "description": "Effect: Unit takes 1 damage after any ACT ability resolves that pushes or pulls them. Lasts until end of this unit’s next turn or until this unit has taken a damage this way."
+      },
+      {
+        "name": "Destructive Glee",
+        "id": "destructiveGlee",
+        "type": "Self",
+        "description": "Effect: Step 1, then Splash (self): 1 fire damage, push 1, and inflict 1 vulnerable, then self is obliterated."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Vomit Bullets",
+        "id": "vomitBullets",
+        "description": "Bone shards gains effect: (4+) push 1, (6) push 1 again."
+      },
+      {
+        "name": "Napalm Injector",
+        "id": "napalmInjector",
+        "description": "Destructive Glee’s splash effect gains effect (4+): +1 fire damage (6+): and +1 vulnerable"
+      },
+      {
+        "name": "Hot Chamber",
+        "id": "hotChamber",
+        "description": "Regurgitate Ammo can target two different adjacent units, but no longer grants strength."
+      }
+    ]
+  },
+  {
+    "name": "BarrelForm",
+    "id": "barrelForm",
+    "type": "hunter",
+    "house": "carcass",
+    "mv": 2,
+    "hp": 4,
+    "df": 4,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Formation",
+        "id": "formation",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Snipe",
+        "id": "snipe",
+        "type": "Attack, range 2–4, reload",
+        "description": "On hit: 2 damage. Headshot: and inflict 1 vulnerable."
+      },
+      {
+        "name": "Transform to Gun",
+        "id": "transformToGun",
+        "type": "Self",
+        "description": "Effect: Unit becomes unable to MOVE or step, but ranged abilities gain +2 maximum range and ignore armor and cover. It can end this effect by sacrificing a MOVE, but if it does, it loses all associate effects."
+      },
+      {
+        "name": "Deathmark",
+        "id": "deathmark",
+        "type": "Curse, Range 2–4",
+        "description": "Effect: Inflict 2 vulnerable, (3+): 3 vulnerable, (5+): Remove any vitality first."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Claw Pitons",
+        "id": "clawPitons",
+        "description": "Transform to Gun makes this unit immune to push and pull."
+      },
+      {
+        "name": "Extended Barrel",
+        "id": "extendedBarrel",
+        "description": "Snipe gains +1D when this unit is in cover, and -1D when it is not."
+      },
+      {
+        "name": "Caliber Up",
+        "id": "caliberUp",
+        "description": "Snipe gains 1 splash and Headshot: push 2"
+      }
+    ]
+  },
+  {
+    "name": "EGIS Weapon",
+    "id": "egisWeapon",
+    "type": "tyrant",
+    "house": "carcass",
+    "mv": 3,
+    "hp": 6,
+    "df": 2,
+    "armor": "PHYS",
+    "traits": [
+      {
+        "name": "Formation",
+        "id": "formation",
+        "description": ""
+      },
+      {
+        "name": "Siege Shield",
+        "id": "siegeShield",
+        "description": "May be used as a cover object by allies"
+      },
+      {
+        "name": "Tyrant",
+        "id": "tyrantTrait",
+        "description": "2x2 unit"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Juggernaut",
+        "id": "juggernaut",
+        "type": "Self, Push",
+        "description": "Step 1, then splash (self) push foes 1. (5+) push foes 2. May move into and destroy walls with this step."
+      },
+      {
+        "name": "Mortar",
+        "id": "mortar",
+        "type": "Attack, range 2-3, reload",
+        "description": "On hit: 1 damage then Splash: 1 fire damage. Headshot: +1 damage on main target"
+      },
+      {
+        "name": "Catechism Devil Cannon",
+        "id": "catechismDevilCannon",
+        "type": "Line, reload",
+        "description": "Line 5, 1 fire damage. Inflicts 1 vulnerable on the first unit in the line. Pierces through walls and can target through walls."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Fortify",
+        "id": "fortify",
+        "description": "Juggernaut also clears all negative tokens."
+      },
+      {
+        "name": "Heavy Caliber Cannon",
+        "id": "heavyCaliberCannon",
+        "description": "Catechism pushes all units in the line 1 space and destroys all walls."
+      },
+      {
+        "name": "Gunner Pivot",
+        "id": "gunnerPivot",
+        "description": "When at least one ally is adjacent to this unit, Mortar ignores cover."
+      }
+    ]
+  },
+  {
+    "name": "Operator",
+    "id": "operator",
+    "type": "necromancer",
+    "house": "carcass",
+    "mv": 4,
+    "hp": 8,
+    "df": 4,
+    "armor": "PHYS",
+    "traits": [
+      {
+        "name": "Formation",
+        "id": "formation",
+        "description": ""
+      },
+      {
+        "name": "Hot Clip",
+        "id": "hotClip",
+        "description": "Once a round, reloading grants you 1 strength and causes your next attack to inflict +1 vulnerable on hit."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Akimbo",
+        "id": "akimbo",
+        "type": "Attack, range 2-4, reload",
+        "description": "On hit: 2 damage. Effect (4+): One other foe in range takes 1 damage, (6+): one other foe in range takes 1 damage."
+      }
+    ],
+    "soulAbilities": [
+      {
+        "name": "Reload Slide",
+        "id": "reloadSlide",
+        "cost": 1,
+        "timing": "Own or allied turn",
+        "description": "Step 1, then you or an adjacent ally reload."
+      },
+      {
+        "name": "Bullet Time",
+        "id": "bulletTime",
+        "cost": 3,
+        "timing": "Own turn",
+        "description": "Clear one (5+) or two negative tokens. Ranged attacks automatically miss you until the end of your next turn (5+) and you are immune to splash and line damage for the duration."
+      }
+    ],
+    "upgrades": [
+      {
+        "type": "trait",
+        "upgrade": [
+          {
+            "name": "Bone Wall",
+            "id": "boneWall",
+            "description": "You can use your units as cover. While in cover your abilities gain +2 range."
+          },
+          {
+            "name": "Gun Kata",
+            "id": "gunKata",
+            "description": "Ranged attacks gain a minimum range of 1 and push units 1 if they are adjacent."
+          },
+          {
+            "name": "Clutch Reload",
+            "id": "clutchReload",
+            "description": "Your ranged attacks gain headshot: reload."
+          }
+        ]
+      },
+      {
+        "type": "ability",
+        "upgrade": [
+          {
+            "name": "Grenade Jump",
+            "id": "grenadeJump",
+            "type": "Self",
+            "description": "Effect: Splash (self): 1 fire damage, then step 2 with free movement."
+          },
+          {
+            "name": "Armor Lock",
+            "id": "Armor Lock",
+            "type": "Self",
+            "description": "Effect: Push all adjacent foes 1. Until the end of your next turn, you gain super armor, cover from all directions, and allied units can use as a cover object. You cannot MOVE, step or be pushed or pulled for the same duration."
+          },
+          {
+            "name": "Devil Bullet",
+            "id": "devilBullet",
+            "type": "Self",
+            "description": "Effect: Reload. Your next attack ignores armor, and automatically triggers headshot effects on hit."
+          },
+          {
+            "name": "Superkick",
+            "id": "superkick",
+            "type": "Melee",
+            "description": "Effect: Push an adjacent unit 3. Foes gain 1 vulnerable if they would be pushed into a wall or elevated space."
+          },
+          {
+            "name": "LV4 Living Cannon",
+            "id": "lv4LivingCannon",
+            "type": "Attack, range 3-6, reload*",
+            "description": "On hit: 1 fire damage and 1 vulnerable. Splash (target): 1 fire damage. Headshot: Splash (target) 1 vulnerable. *Effect: Must reload twice before this is usable."
+          },
+          {
+            "name": "SG88 two barrel shotgun",
+            "id": "sg88TwoBarrelShotgun",
+            "type": "Attack, range 2-2, reload",
+            "description": "On hit: 1 damage, then 1 damage. Effect: push 1, then push 1. Headshot: Reload."
+          },
+          {
+            "name": "Unholy Sixgun",
+            "id": "unholySixgun",
+            "type": "Attack, range 2-4, reload",
+            "description": "On hit: 2 damage. Headshot: this attack deals +1 base damage on hit for the rest of combat, up to a maximum of 4."
+          }
+        ]
+      },
+      {
+        "type": "soulAbility",
+        "upgrade": [
+          {
+            "name": "Double Tap",
+            "id": "doubleTap",
+            "cost": 1,
+            "timing": "Any turn",
+            "description": "Trigger: you reduce a unit to exactly 1 hp. Effect: you may immediately activate this ability to deal 1 damage to it, ignoring armor."
+          },
+          {
+            "name": "Frag Bullet",
+            "id": "fragBullet",
+            "cost": 1,
+            "timing": "Own Turn",
+            "description": "Trigger: You hit an attack. Effect: Target gains 3 vulnerable after the ability resolves."
+          },
+          {
+            "name": "Bullet hustle",
+            "id": "bulletHustle",
+            "cost": 2,
+            "timing": "Any turn",
+            "description": "Trigger: After any unit MOVEs. Effect: Step 2, then deal 1 damage to a unit in range 3."
+          },
+          {
+            "name": "Overwatch",
+            "id": "overwatch",
+            "cost": 3,
+            "timing": "Own turn",
+            "description": "Effect: Reload. Until the start of your next turn, enemy units entering adjacent spaces without being pushed or pulled there take 1 damage and are pushed 1, interrupting their movement. This effect can only trigger once a turn."
+          },
+          {
+            "name": "Bullet Sonata",
+            "id": "bulletSonata",
+            "cost": 4,
+            "timing": "Own turn",
+            "description": "Effect: Every foe in range 2 takes 1 damage, ignoring armor, and is pushed 1."
+          },
+          {
+            "name": "S.T.G.",
+            "id": "stg",
+            "cost": 6,
+            "timing": "Own turn",
+            "description": "Trigger: Headshot. Effect: Deal 6 devil damage to the targeted unit, sending them Straight to the Grave."
+          }
+        ]
+      }
+    ]
+  }
+]

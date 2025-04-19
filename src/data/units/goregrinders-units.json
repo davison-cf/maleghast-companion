@@ -1,0 +1,442 @@
+[
+  {
+    "name": "Warhead",
+    "id": "gunwight",
+    "type": "thrall",
+    "house": "goregrinders",
+    "mv": 4,
+    "hp": 1,
+    "df": 3,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Blood Rage",
+        "id": "bloodRage",
+        "description": ""
+      },
+      {
+        "name": "Thrall",
+        "id": "thrallTrait",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Charge",
+        "id": "charge",
+        "type": "Self",
+        "description": "Effect: MOVE as far as possible in a straight line, passing through units. Then, units passed through during this move take 1 damage."
+      },
+      {
+        "name": "Cleave",
+        "id": "cleave",
+        "type": "Melee, attack",
+        "description": "On hit: 1 damage and 1 damage to another adjacent unit."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Bladed",
+        "id": "bladed",
+        "description": "Charge has a (5+) chance to grant retaliation until the start of its next turn."
+      },
+      {
+        "name": "Overclocked",
+        "id": "overclocked",
+        "description": "At 1 hp or lower, gain free movement"
+      },
+      {
+        "name": "Lobotomized",
+        "id": "lobotomized",
+        "description": "Gain Curseproof"
+      }
+    ]
+  },
+  {
+    "name": "Pain Ghoul",
+    "id": "painGhoul",
+    "type": "freak",
+    "house": "goregrinders",
+    "mv": 4,
+    "hp": 4,
+    "df": 3,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Blood Rage",
+        "id": "bloodRage",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Pain Frenzy",
+        "id": "painFrenzy",
+        "type": "Curse, Range 3",
+        "description": "Effect: Unit gains 2 berserk or 2 speed."
+      },
+      {
+        "name": "Cauterize",
+        "id": "cauterize",
+        "type": "Curse, Range 3",
+        "description": "Effect: Clear all negative tokens on self or a unit, then deal 1 fire damage to them. This damage can't slay a unit."
+      },
+      {
+        "name": "Meat Hook",
+        "id": "meatHook:",
+        "type": "Pull, Range 2-3",
+        "description": "Effect: Pull unit 3"
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Stim Haze",
+        "id": "stimHaze",
+        "description": "At 1 hp or lower, self and adjacent allies become curseproof"
+      },
+      {
+        "name": "Frenzy Hook",
+        "id": "frenzyHook",
+        "description": "At 1 hp or lower, Meat Hook can pull up to three units"
+      },
+      {
+        "name": "Adrenalize",
+        "id": "adrenalize",
+        "description": "Allies gain 1 speed per negative token removed from Cauterize"
+      }
+    ]
+  },
+  {
+    "name": "Carnifex",
+    "id": "carnifex",
+    "type": "scion",
+    "house": "goregrinders",
+    "mv": 4,
+    "hp": 4,
+    "df": 3,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Blood Rage",
+        "id": "bloodRage",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Rev",
+        "id": "rev",
+        "type": "Self",
+        "description": "Effect: Gain 1 strength and speed (5+) and retaliation until the start of this unit's next turn."
+      },
+      {
+        "name": "Chainsaw:",
+        "id": "chainsaw",
+        "type": "Melee, attack",
+        "description": "On hit: 1 damage, Effect: (4+): 1 damage again, (6+): 1 damage again"
+      },
+      {
+        "name": "Wild Slashes",
+        "id": "wildSlashes",
+        "type": "Self",
+        "description": "Effect: MOVE as far as possible in a straight line. Then, all units adjacent to any space of this MOVE take 1 fire damage."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Heavy Swing",
+        "id": "heavySwing",
+        "description": "May step 1 before and after using Chainsaw."
+      },
+      {
+        "name": "Rile",
+        "id": "rile",
+        "description": "Rev grants one (5+) or two berserk."
+      },
+      {
+        "name": "Bloody Teeth",
+        "id": "bloodyTeeth",
+        "description": "At 0 hp, damage ignores all armor."
+      }
+    ]
+  },
+  {
+    "name": "Painwheel",
+    "id": "painwheel",
+    "type": "horror",
+    "house": "goregrinders",
+    "mv": 5,
+    "hp": 4,
+    "df": 3,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Blood Rage",
+        "id": "bloodRage",
+        "description": ""
+      },
+      {
+        "name": "Hellwheel",
+        "id": "hellwheel",
+        "description": "This unit may spend speed tokens as strength. May pass through units but not end their turn in their spaces."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Exfoliate",
+        "id": "exfoliate",
+        "type": "Melee, Attack",
+        "description": "On hit: 1 damage. Effect: (4+) 1 damage again. (6+) 1 damage again."
+      },
+      {
+        "name": "Spin Out",
+        "id": "spinOut",
+        "type": "Self",
+        "description": "Effect: Unit MOVEs as far as possible in a straight line. The first enemy unit this unit passes through during this MOVE takes 1 fire damage. Then this unit gains 2 speed."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Barbed Wheel",
+        "id": "barbedWheel",
+        "description": "Spin Out may pull a unit in range 3 one space before its MOVE"
+      },
+      {
+        "name": "Endless Screaming",
+        "id": "endlessScreaming",
+        "description": "Spin out grants 1 berserk"
+      },
+      {
+        "name": "Hurtle",
+        "id": "hurtle",
+        "description": "At 1 hp, may MOVE again for free at any point during turn"
+      }
+    ]
+  },
+  {
+    "name": "Berserker",
+    "id": "berserker",
+    "type": "tyrant",
+    "house": "goregrinders",
+    "mv": 4,
+    "hp": 6,
+    "df": 2,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Blood Rage",
+        "id": "bloodRage",
+        "description": ""
+      },
+      {
+        "name": "Steaming Rage",
+        "id": "steamingRage",
+        "description": "When taking damage, gain 1 berserk and 1 strength. This effect can’t trigger more than one a round."
+      },
+      {
+        "name": "Tyrant",
+        "id": "tyrantTrait",
+        "description": "2x2 unit"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Pulverize",
+        "id": "pulverize",
+        "type": "Self",
+        "description": "Effect: Pull all units in range 2 one space towards this unit. Then splash (self): 1 fire damage and destroy all adjacent walls."
+      },
+      {
+        "name": "Building Rage",
+        "id": "buildingRage",
+        "type": "Self, retaliation",
+        "description": "Effect: Gain 1 strength and 1 berserk, (4+) then gain retaliation until end of this unit’s next turn."
+      },
+      {
+        "name": "Rip and Tear",
+        "id": "ripAndTear:",
+        "type": "Melee, attack",
+        "description": "On hit: On hit, 2 damage. Deal 1 damage again if this unit has 3 or less hp, then deal 1 damage again if it is at 1 hp or less."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Machineheart",
+        "id": "machineheart",
+        "description": "At 1 hp or lower, gains super armor."
+      },
+      {
+        "name": "Fuel Injectors",
+        "id": "fuelInjectors",
+        "description": "May step 2 before using Pulverize"
+      },
+      {
+        "name": "Bifurcate",
+        "id": "bifurcate",
+        "description": "Rip and Tear obliterates units that it reduces to 0 hp."
+      }
+    ]
+  },
+  {
+    "name": "Warlord",
+    "id": "warlord",
+    "type": "necromancer",
+    "house": "goregrinders",
+    "mv": 4,
+    "hp": 10,
+    "df": 3,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Blood Rage",
+        "id": "bloodRage",
+        "description": ""
+      },
+      {
+        "name": "Fueled by Rage",
+        "id": "fueledByRage",
+        "description": "Gain 1 berserk token at the start of your turn. You may spend berserk tokens as speed tokens."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Superheated Chainblade",
+        "id": "superheatedChainblade",
+        "type": "Attack, Melee",
+        "description": "On hit: 1 damage, Effect: (4+): 1 fire damage again, (6+): 1 fire damage again"
+      }
+    ],
+    "soulAbilities": [
+      {
+        "name": "Ignite",
+        "id": "Ignite",
+        "cost": 1,
+        "timing": "Own or allied turn",
+        "description": "Range 3: Effect: Deal 1 fire damage to self or a unit in range, ignoring armor. That damage cannot slay them. Unit gains 1 berserk, and 1 speed."
+      },
+      {
+        "name": "Glory Kill",
+        "id": "gloryKill",
+        "cost": 3,
+        "timing": "Own or allied turn",
+        "description": "Effect: Obliterate an adjacent unit at 1 hp or lower. Gain 2 strength, then step 2."
+      }
+    ],
+    "upgrades": [
+      {
+        "type": "trait",
+        "upgrade": [
+          {
+            "name": "Bone Wall",
+            "id": "boneWall",
+            "description": "You can use your units as cover. While in cover your abilities gain +2 range."
+          },
+          {
+            "name": "Gun Kata",
+            "id": "gunKata",
+            "description": "Ranged attacks gain a minimum range of 1 and push units 1 if they are adjacent."
+          },
+          {
+            "name": "Clutch Reload",
+            "id": "clutchReload",
+            "description": "Your ranged attacks gain headshot: reload."
+          }
+        ]
+      },
+      {
+        "type": "abilities",
+        "upgrade": [
+          {
+            "name": "Grenade Jump",
+            "id": "grenadeJump",
+            "type": "Self",
+            "description": "Effect: Splash (self): 1 fire damage, then step 2 with free movement."
+          },
+          {
+            "name": "Armor Lock",
+            "id": "Armor Lock",
+            "type": "Self",
+            "description": "Effect: Push all adjacent foes 1. Until the end of your next turn, you gain super armor, cover from all directions, and allied units can use as a cover object. You cannot MOVE, step or be pushed or pulled for the same duration."
+          },
+          {
+            "name": "Devil Bullet",
+            "id": "devilBullet",
+            "type": "Self",
+            "description": "Effect: Reload. Your next attack ignores armor, and automatically triggers headshot effects on hit."
+          },
+          {
+            "name": "Superkick",
+            "id": "superkick",
+            "type": "Melee",
+            "description": "Effect: Push an adjacent unit 3. Foes gain 1 vulnerable if they would be pushed into a wall or elevated space."
+          },
+          {
+            "name": "LV4 Living Cannon",
+            "id": "lv4LivingCannon",
+            "type": "Attack, range 3-6, reload*",
+            "description": "On hit: 1 fire damage and 1 vulnerable. Splash (target): 1 fire damage. Headshot: Splash (target) 1 vulnerable. *Effect: Must reload twice before this is usable."
+          },
+          {
+            "name": "SG88 two barrel shotgun",
+            "id": "sg88TwoBarrelShotgun",
+            "type": "Attack, range 2-2, reload",
+            "description": "On hit: 1 damage, then 1 damage. Effect: push 1, then push 1. Headshot: Reload."
+          },
+          {
+            "name": "Unholy Sixgun",
+            "id": "unholySixgun",
+            "type": "Attack, range 2-4, reload",
+            "description": "On hit: 2 damage. Headshot: this attack deals +1 base damage on hit for the rest of combat, up to a maximum of 4."
+          }
+        ]
+      },
+      {
+        "type": "soulAbilities",
+        "upgrade": [
+          {
+            "name": "Double Tap",
+            "id": "doubleTap",
+            "cost": 1,
+            "timing": "Any turn",
+            "description": "Trigger: you reduce a unit to exactly 1 hp. Effect: you may immediately activate this ability to deal 1 damage to it, ignoring armor."
+          },
+          {
+            "name": "Frag Bullet",
+            "id": "fragBullet",
+            "cost": 1,
+            "timing": "Own Turn",
+            "description": "Trigger: You hit an attack. Effect: Target gains 3 vulnerable after the ability resolves."
+          },
+          {
+            "name": "Bullet hustle",
+            "id": "bulletHustle",
+            "cost": 2,
+            "timing": "Any turn",
+            "description": "Trigger: After any unit MOVEs. Effect: Step 2, then deal 1 damage to a unit in range 3."
+          },
+          {
+            "name": "Overwatch",
+            "id": "overwatch",
+            "cost": 3,
+            "timing": "Own turn",
+            "description": "Effect: Reload. Until the start of your next turn, enemy units entering adjacent spaces without being pushed or pulled there take 1 damage and are pushed 1, interrupting their movement. This effect can only trigger once a turn."
+          },
+          {
+            "name": "Bullet Sonata",
+            "id": "bulletSonata",
+            "cost": 4,
+            "timing": "Own turn",
+            "description": "Effect: Every foe in range 2 takes 1 damage, ignoring armor, and is pushed 1."
+          },
+          {
+            "name": "S.T.G.",
+            "id": "stg",
+            "cost": 6,
+            "timing": "Own turn",
+            "description": "Trigger: Headshot. Effect: Deal 6 devil damage to the targeted unit, sending them Straight to the Grave."
+          }
+        ]
+      }
+    ]
+  }
+]

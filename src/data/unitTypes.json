@@ -1,0 +1,58 @@
+[
+  {
+    "id": "",
+    "name": "",
+    "pointValue": 0,
+    "limit": 0,
+    "description": ""
+  },
+  {
+    "id": "thrall",
+    "name": "Thrall",
+    "pointValue": 0.5,
+    "limit": -1,
+    "description": "Basic unit that can nevertheless be powerful. Though individually weaker, you get two thralls for one unit slot, so you can potentially deploy up to 10. They can also act two at a time. Since you get two units per slot with thralls, they are good for body blocking and for generating SOUL."
+  },
+  {
+    "id": "scion",
+    "name": "Scion",
+    "pointValue": 1,
+    "limit": 3,
+    "description": "A specialist, elite unit with powerful abilities that play off its faction."
+  },
+  {
+    "id": "freak",
+    "name": "Freak",
+    "pointValue": 1,
+    "limit": 2,
+    "description": "A support unit that is weak on its own, but increases the power of your other units or weakens enemy units."
+  },
+  {
+    "id": "horror",
+    "name": "Horror",
+    "pointValue": 1,
+    "limit": 2,
+    "description": "Fast but fragile unit"
+  },
+  {
+    "id": "hunter",
+    "name": "Hunter",
+    "pointValue": 1,
+    "limit": 2,
+    "description": "Ranged unit with high damage that is weak up close."
+  },
+  {
+    "id": "tyrant",
+    "name": "Tyrant",
+    "pointValue": 1,
+    "limit": 1,
+    "description": "A powerhouse, large unit that takes up 4 spaces (2x2). You can only take one tyrant, though it still only takes one unit slot. Tyrants can disrupt formations, smash through walls, and deal lots of area of effect damage, and while generally very sturdy they have low defense."
+  },
+  {
+    "id": "necromancer",
+    "name": "Necromancer",
+    "pointValue": 1,
+    "limit": 1,
+    "description": "Basic unit that can nevertheless be powerful. Though individually weaker, you get two thralls for one unit slot, so you can potentially deploy up to 10. They can also act two at a time. Since you get two units per slot with thralls, they are good for body blocking and for generating SOUL."
+  }
+]
