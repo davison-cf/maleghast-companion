@@ -327,113 +327,113 @@
         "type": "trait",
         "upgrade": [
           {
-            "name": "Bone Wall",
-            "id": "boneWall",
-            "description": "You can use your units as cover. While in cover your abilities gain +2 range."
+            "name": "Nerve Twitch",
+            "id": "nerveTwitch",
+            "description": "At 3 hp or lower, DF increases to 5+."
           },
           {
-            "name": "Gun Kata",
-            "id": "gunKata",
-            "description": "Ranged attacks gain a minimum range of 1 and push units 1 if they are adjacent."
+            "name": "Blood Drinker",
+            "id": "bloodDrinker",
+            "description": "Slaying a unit clears a negative token."
           },
           {
-            "name": "Clutch Reload",
-            "id": "clutchReload",
-            "description": "Your ranged attacks gain headshot: reload."
+            "name": "Blood Rush",
+            "id": "bloodRush",
+            "description": "At 3 hp or lower, gain retaliation."
           }
         ]
       },
       {
-        "type": "abilities",
+        "type": "ability",
         "upgrade": [
           {
-            "name": "Grenade Jump",
-            "id": "grenadeJump",
+            "name": "Quench",
+            "id": "quench",
             "type": "Self",
-            "description": "Effect: Splash (self): 1 fire damage, then step 2 with free movement."
+            "description": "Effect: Convert up to 3 negative tokens on self or adjacent allies to speed or strength tokens. Then this unit becomes curseproof until the start of its next turn."
           },
           {
-            "name": "Armor Lock",
-            "id": "Armor Lock",
+            "name": "Frenzy Chain",
+            "id": "frenzyChain",
+            "type": "Range 3",
+            "description": "Pull a unit in range 2 spaces. Effect (3+): Pull another unit. (5+): Pull another unit."
+          },
+          {
+            "name": "Furious Roar",
+            "id": "furiousRoar",
             "type": "Self",
-            "description": "Effect: Push all adjacent foes 1. Until the end of your next turn, you gain super armor, cover from all directions, and allied units can use as a cover object. You cannot MOVE, step or be pushed or pulled for the same duration."
+            "description": "Destroy all adjacent walls. Then, self and two other adjacent units may step 1 and gain 1 speed."
           },
           {
-            "name": "Devil Bullet",
-            "id": "devilBullet",
+            "name": "Apoplexy",
+            "id": "apoplexy",
             "type": "Self",
-            "description": "Effect: Reload. Your next attack ignores armor, and automatically triggers headshot effects on hit."
+            "description": "Gain 1 strength and 1 berserk, then double all berserk and strength tokens."
           },
           {
-            "name": "Superkick",
-            "id": "superkick",
-            "type": "Melee",
-            "description": "Effect: Push an adjacent unit 3. Foes gain 1 vulnerable if they would be pushed into a wall or elevated space."
+            "name": "Pilebunker",
+            "id": "pilebunker",
+            "type": "Attack, melee",
+            "description": "On hit: 2 damage, then 1 fire damage again. Effect: This attack rolls -1D."
           },
           {
-            "name": "LV4 Living Cannon",
-            "id": "lv4LivingCannon",
-            "type": "Attack, range 3-6, reload*",
-            "description": "On hit: 1 fire damage and 1 vulnerable. Splash (target): 1 fire damage. Headshot: Splash (target) 1 vulnerable. *Effect: Must reload twice before this is usable."
+            "name": "Saw Toothed Slayer Axe",
+            "id": "sawToothedSlayerAxe",
+            "type": "Line 4",
+            "description": "Line: 1 damage. If only one unit is caught in the area, increase this damage to 2 instead and this line destroys walls."
           },
           {
-            "name": "SG88 two barrel shotgun",
-            "id": "sg88TwoBarrelShotgun",
-            "type": "Attack, range 2-2, reload",
-            "description": "On hit: 1 damage, then 1 damage. Effect: push 1, then push 1. Headshot: Reload."
-          },
-          {
-            "name": "Unholy Sixgun",
-            "id": "unholySixgun",
-            "type": "Attack, range 2-4, reload",
-            "description": "On hit: 2 damage. Headshot: this attack deals +1 base damage on hit for the rest of combat, up to a maximum of 4."
+            "name": "Spine Devil Blade",
+            "id": "spineDevilBlade",
+            "type": "Attack, melee",
+            "description": "On hit: 1 fire damage. Effect: Increase this damage by+1 on hit for every 3 hp this unit is missing. If this unit is at 0 hp, this damage obliterates its target if it slays them."
           }
         ]
       },
       {
-        "type": "soulAbilities",
+        "type": "soulAbility",
         "upgrade": [
           {
-            "name": "Double Tap",
-            "id": "doubleTap",
+            "name": "Hellrider Kick",
+            "id": "hellriderKick",
             "cost": 1,
-            "timing": "Any turn",
-            "description": "Trigger: you reduce a unit to exactly 1 hp. Effect: you may immediately activate this ability to deal 1 damage to it, ignoring armor."
+            "timing": "Own or allied turn",
+            "description": "Effect: MOVE with free movement, then deal 1 fire damage to an adjacent foe."
           },
           {
-            "name": "Frag Bullet",
-            "id": "fragBullet",
+            "name": "Overclock",
+            "id": "overclock",
             "cost": 1,
-            "timing": "Own Turn",
-            "description": "Trigger: You hit an attack. Effect: Target gains 3 vulnerable after the ability resolves."
+            "timing": "Own or allied turn, range 3",
+            "description": "Effect: Self or unit in range gains 2 speed. If the unit is at 1 hp or lower, splash (target): 1 fire damage."
           },
           {
-            "name": "Bullet hustle",
-            "id": "bulletHustle",
+            "name": "Gorebather",
+            "id": "gorebather",
             "cost": 2,
             "timing": "Any turn",
-            "description": "Trigger: After any unit MOVEs. Effect: Step 2, then deal 1 damage to a unit in range 3."
+            "description": "Trigger: You slay a unit. Effect: Step 1. All allied units anywhere may step 1."
           },
           {
-            "name": "Overwatch",
-            "id": "overwatch",
+            "name": "Killing Spree",
+            "id": "killingSpree",
             "cost": 3,
-            "timing": "Own turn",
-            "description": "Effect: Reload. Until the start of your next turn, enemy units entering adjacent spaces without being pushed or pulled there take 1 damage and are pushed 1, interrupting their movement. This effect can only trigger once a turn."
+            "timing": "Any turn",
+            "description": "Trigger: After a unit ACTs. Effect: Step 1, then deal 1 damage to an adjacent unit, ignoring armor. Speed can be spent to extend this step by +2. If that unit is slain, repeat this effect. It can repeat any number of times."
           },
           {
-            "name": "Bullet Sonata",
-            "id": "bulletSonata",
+            "name": "Blood Boil",
+            "id": "bloodBoil",
             "cost": 4,
-            "timing": "Own turn",
-            "description": "Effect: Every foe in range 2 takes 1 damage, ignoring armor, and is pushed 1."
+            "timing": "Any turn",
+            "description": "Trigger: Unit is slain. Effect: Unit is not slain but remains at 0 hp and becomes immune to all damage. At the end of its next turn, it explodes, obliterating it, and dealing splash (self): 1 fire damage."
           },
           {
-            "name": "S.T.G.",
-            "id": "stg",
+            "name": "Devil Impact",
+            "id": "devilImpact",
             "cost": 6,
-            "timing": "Own turn",
-            "description": "Trigger: Headshot. Effect: Deal 6 devil damage to the targeted unit, sending them Straight to the Grave."
+            "timing": "",
+            "description": "Deal 6 devil damage to an adjacent unit. Then deal 6 devil damage to yourself."
           }
         ]
       }
