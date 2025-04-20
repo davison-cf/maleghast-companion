@@ -1,4 +1,3 @@
-import React from 'react';
 import { IUnit, ITrait, IAbility, ISoulAbility } from '../../models';
 import { getUnitType } from '../../services/UnitService';
 import { getUnitPortrait } from '../../services/ImageService';
@@ -96,7 +95,7 @@ function UnitDetailPresentation({
                         <input 
                           type="checkbox" 
                           checked={isTraitUpgradeSelected(trait.name)}
-                          onChange={() => {}} // Handle change in onClick to avoid double triggering
+                          onChange={() => {}}
                           id={`trait-upgrade-${index}`}
                         />
                         <label htmlFor={`trait-upgrade-${index}`}>{trait.name}</label>
@@ -123,7 +122,7 @@ function UnitDetailPresentation({
                         <input 
                           type="checkbox" 
                           checked={isAbilityUpgradeSelected(ability.name)}
-                          onChange={() => {}} // Handle change in onClick to avoid double triggering
+                          onChange={() => {}}
                           id={`ability-upgrade-${index}`}
                         />
                         <label htmlFor={`ability-upgrade-${index}`}>{ability.name}</label>
@@ -150,7 +149,7 @@ function UnitDetailPresentation({
                         <input 
                           type="checkbox" 
                           checked={isSoulAbilityUpgradeSelected(soulAbility.name)}
-                          onChange={() => {}} // Handle change in onClick to avoid double triggering
+                          onChange={() => {}}
                           id={`soul-ability-upgrade-${index}`}
                         />
                         <label htmlFor={`soul-ability-upgrade-${index}`}>{soulAbility.name}</label>

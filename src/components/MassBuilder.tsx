@@ -1,7 +1,6 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { IMass, IUnit } from '../models';
-// Import the houses from JSON files
 import rawHouses from '../data/houses.json';
 import { calculatePoints, getUnitPoints, getUnitsForHouse, getUnitType } from '../services/UnitService';
 import { HouseId, UnitTypeId } from '../models/enums';
@@ -74,13 +73,11 @@ function MassBuilder({ masses, onCreate, onUpdate}: MassBuilderProps) {
           description: existingMass.description || ''
         });
         
-        // Load units for the existing mass's house
         loadUnitsForHouse(existingMass.house);
       }
     }
   }, [id, masses]);
   
-  // Load units based on selected house
   const loadUnitsForHouse = (house: HouseId) => {
     setAvailableUnits(getUnitsForHouse(house));
   };
@@ -89,7 +86,6 @@ function MassBuilder({ masses, onCreate, onUpdate}: MassBuilderProps) {
     const { name, value } = e.target;
     setMass({ ...mass, [name]: value });
     
-    // If house changes, load the corresponding units
     if (name === 'house') {
       loadUnitsForHouse(value as HouseId);
     }
@@ -120,7 +116,6 @@ function MassBuilder({ masses, onCreate, onUpdate}: MassBuilderProps) {
         }
       })
     } else {
-      // Handle other fields
       setUnitBeingAdded({ ...unitBeingAdded, [name]: value });
     }
   };
@@ -130,27 +125,22 @@ function MassBuilder({ masses, onCreate, onUpdate}: MassBuilderProps) {
     
     const unitToAdd = {
       ...unitBeingAdded.unit,
-      quantity: unitBeingAdded.unit.quantity || 1 // Ensure there's at least a quantity of 1
+      quantity: unitBeingAdded.unit.quantity || 1
     };
     
-    // Calculate the points for this addition
     const pointsForAddition = unitBeingAdded.pointsPerUnit;
     
-    // Update the mass with the new unit and updated points
     setMass(prevMass => {
-      // Check if this unit type already exists in the mass
       const existingUnitIndex = prevMass.units.findIndex(unit => unit.id === unitToAdd.id);
       
       let updatedUnits;
       if (existingUnitIndex >= 0) {
-        // If unit exists, increment its quantity
         updatedUnits = [...prevMass.units];
         updatedUnits[existingUnitIndex] = {
           ...updatedUnits[existingUnitIndex],
           quantity: (updatedUnits[existingUnitIndex].quantity || 0) + (unitToAdd.quantity || 1)
         };
       } else {
-        // If unit doesn't exist, add it to the array
         updatedUnits = [...prevMass.units, unitToAdd];
       }
       
@@ -161,7 +151,6 @@ function MassBuilder({ masses, onCreate, onUpdate}: MassBuilderProps) {
       };
     });
     
-    // Reset the unit being added form
     setUnitBeingAdded({
       unit: {
         name: '',

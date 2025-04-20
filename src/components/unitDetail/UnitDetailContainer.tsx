@@ -10,11 +10,7 @@ interface UnitDetailContainerProps {
   onUnitUpdate?: (updatedUnit: IUnit) => void;
 }
 
-function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerProps) {
-  // Keep track of original unit and mass for reset functionality
-  const [originalUnit] = useState<IUnit>({ ...unit });
-  const [originalMass] = useState<IMass>({ ...mass });
-  
+function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerProps) {  
   // Initialize selectedUpgrades if it doesn't exist on the unit
   const [localUnit, setLocalUnit] = useState<IUnit>(() => {
     return {
@@ -27,10 +23,8 @@ function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerPr
     };
   });
   
-  // Local mass state
   const [localMass, setLocalMass] = useState<IMass>({ ...mass });
   
-  // Track if there are unsaved changes
   const [hasChanges, setHasChanges] = useState(false);
 
   useEffect(() => {
@@ -46,11 +40,9 @@ function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerPr
     setHasChanges(false);
   }, [unit, mass]);
 
-  // Toggle function to add/remove trait upgrades from selectedUpgrades
   const toggleTraitUpgrade = (trait: ITrait) => {
     const updatedUnit = { ...localUnit };
     
-    // Initialize selectedUpgrades object if it doesn't exist
     if (!updatedUnit.selectedUpgrades) {
       updatedUnit.selectedUpgrades = {
         traits: [],
@@ -59,18 +51,15 @@ function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerPr
       };
     }
     
-    // Check if the trait is already selected
     const traitIndex = updatedUnit.selectedUpgrades.traits.findIndex(
       t => t.name === trait.name
     );
     
     if (traitIndex >= 0) {
-      // Remove the trait if already selected
       updatedUnit.selectedUpgrades.traits = updatedUnit.selectedUpgrades.traits.filter(
         t => t.name !== trait.name
       );
     } else {
-      // Add the trait if not already selected
       updatedUnit.selectedUpgrades.traits.push(trait);
     }
 
@@ -78,13 +67,11 @@ function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerPr
     setLocalUnit(updatedUnit);
     setHasChanges(true);
     
-    // Call the callback if provided to update parent state
     if (onUnitUpdate) {
       onUnitUpdate(updatedUnit);
     }
   };
 
-  // Similarly for abilities and soul abilities
   const toggleAbilityUpgrade = (ability: IAbility) => {
     const updatedUnit = { ...localUnit };
     
@@ -147,48 +134,16 @@ function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerPr
     }
   };
 
-  // Check if a trait upgrade is selected
   const isTraitUpgradeSelected = (traitName: string) => {
     return localUnit.selectedUpgrades?.traits.some(t => t.name === traitName) || false;
   };
 
-  // Similarly for abilities and soul abilities
   const isAbilityUpgradeSelected = (abilityName: string) => {
     return localUnit.selectedUpgrades?.abilities.some(a => a.name === abilityName) || false;
   };
 
   const isSoulAbilityUpgradeSelected = (soulAbilityName: string) => {
     return localUnit.selectedUpgrades?.soulAbilities.some(sa => sa.name === soulAbilityName) || false;
-  };
-
-  // Handle save button click
-  const handleSave = () => {
-    // Call parent callbacks with updated data
-    if (onUnitUpdate) {
-      onUnitUpdate(localUnit);
-    }   
-    setHasChanges(false);
-    // You might want to add a success notification here
-  };
-
-  // Handle reset button click
-  const handleReset = () => {
-    // Reset to original values
-    setLocalUnit({
-      ...originalUnit,
-      selectedUpgrades: originalUnit.selectedUpgrades || {
-        traits: [],
-        abilities: [],
-        soulAbilities: []
-      }
-    });
-    setLocalMass({ ...originalMass });
-    setHasChanges(false);
-    
-    // Optionally notify parent components
-    if (onUnitUpdate) {
-      onUnitUpdate(originalUnit);
-    }
   };
 
   if (!localUnit) {
@@ -212,7 +167,7 @@ function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerPr
     );
   };
 
-  const commonProps = {
+  const viewProps = {
     unit: localUnit,
     mass: localMass,
     renderAbilityText,
@@ -227,9 +182,9 @@ function UnitDetailContainer({ unit, mass, onUnitUpdate }: UnitDetailContainerPr
   };
 
   if(localUnit.type === UnitTypeId.Necromancer) {
-    return <NecromancerDetailPresentation {...commonProps} />;
+    return <NecromancerDetailPresentation {...viewProps} />;
   } else {
-    return <UnitDetailPresentation {...commonProps} />;
+    return <UnitDetailPresentation {...viewProps} />;
   }
 }
 
