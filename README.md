@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+# Maleghast Planner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application for building, saving, and managing Mass compositions for the tabletop game Maleghast by Tom Bloom.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Maleghast Planner is a utility tool designed to help players create, optimize, and manage their Mass compositions (teams of units) for Maleghast. The application automatically handles point calculations, House (faction) restrictions, and unit limitations based on game rules.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Mass Builder**: Create and customize your Mass compositions with units from various Houses
+- **Automatic Point Calculation**: Real-time updates of point totals as you build your Mass
+- **Rules Enforcement**: Automatic validation of House-based and count-based unit restrictions
+- **Save/Load**: Export your Mass compositions to files and load them later
+- **Unit Browser**: Browse available units across all Houses with filtering options
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+maleghast-planner/
+├── public/
+│   ├── images/
+│   └── svgs/
+├── src/
+│   ├── app.tsx             # Application routes definition
+│   ├── data/               # Game data stored in JSON files
+│   │   └── units/          # Unit data organized by House
+│   │       ├── abhorers-units.json
+│   │       ├── carcass-units.json
+│   │       ├── deadsouls-units.json
+│   │       ├── gargamox-units.json
+│   │       ├── goregrinders-units.json
+│   │       ├── igorri-units.json
+│   │       ├── houses.json          # House/faction definitions
+│   │       ├── malaceLevels.json    # Malace level data
+│   │       └── unitTypes.json       # Unit type definitions
+│   ├── models/             # TypeScript models/classes for game entities
+│   ├── services/           # Services for data retrieval and manipulation
+│   └── components/         # React components
+└── ...
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technical Details
 
-### `npm run build`
+- Built with React and TypeScript (TSX)
+- Data is stored in JSON files in the application
+- Responsive design for desktop and mobile use
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js
+- npm or yarn
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Clone the repository
+2. Install dependencies
+   ```
+   npm install
+   ```
+3. Start the development server
+   ```
+   npm start
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Select a House (faction) to build your Mass around
+2. Add units to your Mass composition
+3. Apply upgrades and customize units as needed
+4. Save your Mass composition to a file for later use
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Development Status
 
-## Learn More
+Currently in active development, approaching MVP completion.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Include license information here]
+
+## Acknowledgements
+
+Maleghast is a tabletop game created by Tom Bloom. This application is an unofficial fan project.
