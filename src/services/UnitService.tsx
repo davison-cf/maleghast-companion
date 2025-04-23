@@ -1,4 +1,4 @@
-import { IUnit } from "../models";
+import { IUnit, IUnitSimplified } from "../models";
 import { IUpgrades, IAbility, ITrait, ISoulAbility } from "../models/UnitData";
 import { UpgradeType, HouseId, UnitTypeId } from "../models/enums";
 
@@ -73,6 +73,20 @@ const UnitService = {
     }
     
     return units;
+  },
+
+  mapSimpleUnitToUnit: function(sUnit: IUnitSimplified): IUnit | undefined
+  {
+    var units = this.getUnitsForHouse(sUnit.house);
+    var unit = units.find(u => u.id === sUnit.id)
+    
+    if(unit){
+      return {
+        ...unit,
+        ...sUnit
+      }
+    }
+    return unit;
   },
   
   getUnitsForHouse: function (house: HouseId): IUnit[]

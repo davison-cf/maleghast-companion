@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { IMass, IUnit, ITrait, IAbility, ISoulAbility } from '../../models';
 import UnitDetailPresentation from './UnitDetailPresentation';
 import { UnitTypeId } from '../../models/enums';
