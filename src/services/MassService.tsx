@@ -1,46 +1,56 @@
 import { IMass, IMalaceLevel } from "../models";
-import { calculateUnitDarkPower } from "./UnitService";
 import MalaceLevels from "../data/malaceLevels.json"
+import UnitService from "./UnitService";
 
-function checkPoints(mass: IMass): boolean
-{
-  //todo
-  return true;
+const MassService = {
+  checkPoints: (mass: IMass): boolean => {
+    // todo
+    return true;
+  },
+ 
+  checkUnitCounts: (mass: IMass): boolean => {
+    // todo
+    return true;
+  },
+ 
+  checkUpgrades: (mass: IMass): boolean => {
+    // todo
+    return true;
+  },
+ 
+  validateMass: function(mass: IMass): boolean {
+    if(!this.checkPoints(mass)) return false;
+    if(!this.checkUnitCounts(mass)) return false;
+    if(!this.checkUpgrades(mass)) return false;
+ 
+    return true;
+  },
+
+  calculatePoints: function (mass: IMass): number
+  {
+    let sum = 0;
+    mass.units.forEach(unit => sum += UnitService.calculatePoints(unit))
+    return sum;
+  },
+ 
+  calculateDarkPower: function(mass: IMass): number {
+    let sum = 0;
+    mass.units.forEach(unit => {
+      sum += this.calculateUnitDarkPower(unit);
+    });
+ 
+    return sum;
+  },
+ 
+  calculateUnitDarkPower: (unit: any): number => {
+    // todo
+    return 0;
+  },
+ 
+  getMalaceLevel: function(mass: IMass): IMalaceLevel {
+    const dp = this.calculateDarkPower(mass);
+    return MalaceLevels.slice().reverse().find(level => level.darkPower <= dp) as IMalaceLevel;
+  }
 }
 
-function checkUnitCounts(mass: IMass): boolean
-{
-  //todo
-  return true;
-}
-
-function checkUpgrades(mass: IMass): boolean
-{
-  //todo
-  return true;
-}
-
-export function validateMass(mass: IMass): boolean
-{
-  if(!checkPoints(mass)) return false;
-  if(!checkUnitCounts(mass)) return false;
-  if(!checkUpgrades(mass)) return false;
-
-  return true;
-}
-
-export function calculateDarkPower(mass: IMass): number
-{
-  var sum = 0;
-  mass.units.forEach(unit => {
-    sum += calculateUnitDarkPower(unit);
-  });
-
-  return sum;
-}
-
-export function getMalaceLevel(mass: IMass):  IMalaceLevel
-{
-  const dp = calculateDarkPower(mass);
-  return MalaceLevels.slice().reverse().find(level => level.darkPower <= dp) as IMalaceLevel
-}
+export default MassService;

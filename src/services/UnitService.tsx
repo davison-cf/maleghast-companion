@@ -12,144 +12,146 @@ import unitTypes from '../data/unitTypes.json'
 import { IUnitType } from "../models/UnitType";
 
 
-function mapRawUnitsToTypedUnits(rawUnits: any[]): IUnit[] {
-  var units: IUnit[] = []
-  
-  for(const rawUnit of rawUnits || [] ) {
-    const upgrades: IUpgrades = {
-      traits: [],
-      abilities: [],
-      soulAbilities: [],
-    };
+
+const UnitService = {
+  mapRawUnitsToTypedUnits: (rawUnits: any[]): IUnit[] =>
+  {
+    var units: IUnit[] = []
     
-    if(rawUnit.type as UnitTypeId === UnitTypeId.Necromancer)
-    {
-      for (const upgradeType of rawUnit.upgrades || []) {
-        if (upgradeType.type as UpgradeType === UpgradeType.Ability)
-        {
-          for (const upgrade of upgradeType.upgrade || []) {
-            upgrades.abilities.push(upgrade as IAbility);
+    for(const rawUnit of rawUnits || [] ) {
+      const upgrades: IUpgrades = {
+        traits: [],
+        abilities: [],
+        soulAbilities: [],
+      };
+      
+      if(rawUnit.type as UnitTypeId === UnitTypeId.Necromancer)
+      {
+        for (const upgradeType of rawUnit.upgrades || []) {
+          if (upgradeType.type as UpgradeType === UpgradeType.Ability)
+          {
+            for (const upgrade of upgradeType.upgrade || []) {
+              upgrades.abilities.push(upgrade as IAbility);
+            }
           }
-        }
-        else if (upgradeType.type as UpgradeType === UpgradeType.SoulAbility)
-        {
-          for (const upgrade of upgradeType.upgrade || []) {
-            upgrades.soulAbilities.push(upgrade as ISoulAbility);
+          else if (upgradeType.type as UpgradeType === UpgradeType.SoulAbility)
+          {
+            for (const upgrade of upgradeType.upgrade || []) {
+              upgrades.soulAbilities.push(upgrade as ISoulAbility);
+            }
           }
-        }
-        else if (upgradeType.type as UpgradeType === UpgradeType.Trait)
-        {
-          for (const upgrade of upgradeType.upgrade || []) {
-            upgrades.traits.push(upgrade as IAbility);
+          else if (upgradeType.type as UpgradeType === UpgradeType.Trait)
+          {
+            for (const upgrade of upgradeType.upgrade || []) {
+              upgrades.traits.push(upgrade as IAbility);
+            }
           }
+        }  
+      }    
+      else
+      {
+        for (const upgrade of rawUnit.upgrades || []) {
+          upgrades.traits.push(upgrade as ITrait);
         }
-      }  
-    }    
-    else
-    {
-      for (const upgrade of rawUnit.upgrades || []) {
-        upgrades.traits.push(upgrade as ITrait);
-      }
-    }    
-    const unit: IUnit = {
-      name: rawUnit.name,
-      id: rawUnit.id,
-      type: rawUnit.type as UnitTypeId, // cast if using enum
-      house: rawUnit.house as HouseId,
-      mv: rawUnit.mv,
-      hp: rawUnit.hp,
-      df: rawUnit.df,
-      armor: rawUnit.armor ?? '',
-      traits: rawUnit.traits || [],
-      abilities: rawUnit.abilities || [],
-      upgrades: upgrades,
-      quantity: 0
-    };
-
-    units.push(unit);
-  }
+      }    
+      const unit: IUnit = {
+        name: rawUnit.name,
+        id: rawUnit.id,
+        type: rawUnit.type as UnitTypeId, // cast if using enum
+        house: rawUnit.house as HouseId,
+        mv: rawUnit.mv,
+        hp: rawUnit.hp,
+        df: rawUnit.df,
+        armor: rawUnit.armor ?? '',
+        traits: rawUnit.traits || [],
+        abilities: rawUnit.abilities || [],
+        upgrades: upgrades,
+        quantity: 0
+      };
   
-  return units;
-}
-
-export function getUnitsForHouse(house: HouseId): IUnit[]
-{
-  var units: IUnit[] = []
+      units.push(unit);
+    }
+    
+    return units;
+  },
   
-  if(house === HouseId.Carcass || house === HouseId.Heretic) 
+  getUnitsForHouse: function (house: HouseId): IUnit[]
   {
-    units = units.concat(mapRawUnitsToTypedUnits(carcassUnits));
-  }
-
-  if(house === HouseId.Goregrinders || house === HouseId.Heretic) 
+    var units: IUnit[] = []
+    
+    if(house === HouseId.Carcass || house === HouseId.Heretic) 
+    {
+      units = units.concat(this.mapRawUnitsToTypedUnits(carcassUnits));
+    }
+  
+    if(house === HouseId.Goregrinders || house === HouseId.Heretic) 
+    {
+      units = units.concat(this.mapRawUnitsToTypedUnits(goregrindersUnits));
+    }
+  
+    if(house === HouseId.Gargamox || house === HouseId.Heretic) 
+    {
+      units = units.concat(this.mapRawUnitsToTypedUnits(gargamoxUnits));
+    }
+  
+    if(house === HouseId.Deadsouls || house === HouseId.Heretic) 
+    {
+      units = units.concat(this.mapRawUnitsToTypedUnits(deadsoulsUnits));
+    }
+  
+    if(house === HouseId.Abhorrers || house === HouseId.Heretic) 
+    {
+      units = units.concat(this.mapRawUnitsToTypedUnits(abhorrersUnits));
+    }
+  
+    if(house === HouseId.Igorri || house === HouseId.Heretic) 
+    {
+      units = units.concat(this.mapRawUnitsToTypedUnits(igorriUnits));
+    }
+  
+    return units;
+  },
+  
+  getUnitPoints: (unit: IUnit): number =>
   {
-    units = units.concat(mapRawUnitsToTypedUnits(goregrindersUnits));
-  }
-
-  if(house === HouseId.Gargamox || house === HouseId.Heretic) 
+    return unitTypes.find(ut => ut.id === unit.type)?.pointValue || 1;
+  },
+  
+  getUnitType: (unit: IUnit): IUnitType =>
   {
-    units = units.concat(mapRawUnitsToTypedUnits(gargamoxUnits));
-  }
-
-  if(house === HouseId.Deadsouls || house === HouseId.Heretic) 
+    return unitTypes.find(ut => ut.id === unit.type) as IUnitType;
+  },
+  
+  calculatePoints: function (unit: IUnit)
   {
-    units = units.concat(mapRawUnitsToTypedUnits(deadsoulsUnits));
-  }
-
-  if(house === HouseId.Abhorrers || house === HouseId.Heretic) 
+    return this.getUnitPoints(unit) * unit.quantity;;
+  },
+  
+  calculateUnitCount: (units: IUnit[]) =>
   {
-    units = units.concat(mapRawUnitsToTypedUnits(abhorrersUnits));
-  }
-
-  if(house === HouseId.Igorri || house === HouseId.Heretic) 
+    let sum = 0;
+    units.forEach(unit => sum += unit.quantity )
+    return sum;
+  },
+  
+  calculateUnitDarkPower: (unit: IUnit): number =>
   {
-    units = units.concat(mapRawUnitsToTypedUnits(igorriUnits));
+    var sum = 0;
+    if(unit.type === UnitTypeId.Necromancer)
+    {
+      let abilities = unit.selectedUpgrades?.abilities.length ?? 0
+      let soulAbilities = unit.selectedUpgrades?.soulAbilities.length ?? 0
+      let traits = unit.selectedUpgrades?.traits.length ?? 0
+  
+      sum = Math.max(abilities + soulAbilities + traits - 3, 0)
+    }
+    else 
+    {
+      sum += unit.selectedUpgrades?.traits.length ?? 0
+    }
+  
+    return sum;
   }
-
-  return units;
 }
 
-export function getUnitPoints(unit: IUnit): number 
-{
-  return unitTypes.find(ut => ut.id === unit.type)?.pointValue || 1;
-}
-
-export function getUnitType(unit: IUnit): IUnitType 
-{
-  return unitTypes.find(ut => ut.id === unit.type) as IUnitType;
-}
-
-export function calculatePoints(units: IUnit[])
-{
-  var sum = 0;
-  units.forEach(unit => {
-    sum += getUnitPoints(unit) * unit.quantity;
-  })
-  return sum;
-}
-
-export function calculateUnitCount(units: IUnit[])
-{
-  let sum = 0;
-  units.forEach(unit => sum += unit.quantity )
-  return sum;
-}
-
-export function calculateUnitDarkPower(unit: IUnit): number
-{
-  var sum = 0;
-  if(unit.type === UnitTypeId.Necromancer)
-  {
-    let abilities = unit.selectedUpgrades?.abilities.length ?? 0
-    let soulAbilities = unit.selectedUpgrades?.soulAbilities.length ?? 0
-    let traits = unit.selectedUpgrades?.traits.length ?? 0
-
-    sum = Math.max(abilities + soulAbilities + traits - 3, 0)
-  }
-  else 
-  {
-    sum += unit.selectedUpgrades?.traits.length ?? 0
-  }
-
-  return sum;
-}
+export default UnitService;
