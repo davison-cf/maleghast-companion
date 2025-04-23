@@ -1,5 +1,5 @@
 import { IUnit, ITrait, IAbility, ISoulAbility } from '../../models';
-import { getUnitType } from '../../services/UnitService';
+import UnitService from '../../services/UnitService';
 import { getUnitPortrait } from '../../services/ImageService';
 import { JSX } from 'react/jsx-runtime';
 
@@ -33,7 +33,7 @@ function UnitDetailPresentation({
           </div>
           <div className="unit-header-info">
             <h2 className="unit-name">{unit.name}</h2>
-            <div className="unit-subheader">{getUnitType(unit).name}</div>
+            <div className="unit-subheader">{UnitService.getUnitType(unit).name}</div>
           </div>
         </div>
         

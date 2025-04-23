@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { IMass, IUnit } from '../../models';
 import MassDetailPresentation from './MassDetailPresentation';
-import { calculatePoints } from '../../services/UnitService';
+import MassService from '../../services/MassService';
 
 interface MassDetailContainerProps {
   masses: IMass[];
@@ -23,7 +23,7 @@ function MassDetailContainer({ masses, onDelete, onUpdate }: MassDetailContainer
     return <div>Mass not found</div>;
   }
   
-  mass.points = calculatePoints(mass.units)
+  mass.points = MassService.calculatePoints(mass)
 
   const handleDelete = () => {
     if(mass.id) {

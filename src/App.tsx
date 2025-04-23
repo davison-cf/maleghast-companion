@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { IMass } from './models';
 import storageService from './services/StorageService';
 import MassList from './components/MassList';
-import MassDetailContainer from './components/massDetail/MassDetailContainer';
-import MassBuilder from './components/MassBuilder';
 import ThemeSelector from './components/ThemeSelector';
+import MassDetailContainer from './components/massDetail/MassDetailContainer';
+import MassBuilderContainer from './components/massBuilder/MassBuilderContainer';
 
 function App() {
   const [masses, setMasses] = useState<IMass[]>([]);
@@ -76,11 +76,11 @@ function App() {
             />
             <Route 
               path="/builder" 
-              element={<MassBuilder onCreate={handleCreate} />} 
+              element={<MassBuilderContainer onCreate={handleCreate} />} 
             />
             <Route 
               path="/builder/:id" 
-              element={<MassBuilder masses={masses} onUpdate={handleUpdate} />} 
+              element={<MassBuilderContainer masses={masses} onUpdate={handleUpdate} />} 
             />
           </Routes>
         </main>

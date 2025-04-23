@@ -688,10 +688,6 @@ input:focus, textarea:focus, select:focus {
   font-weight: lighter;
 }
 
-.upgrade-description {
-
-}
-
 /* Summary row */
 .units-summary {
   display: flex;

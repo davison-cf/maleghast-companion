@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { IMass } from '../models';
 import { getHouse } from '../services/HouseService';
-import { calculatePoints } from '../services/UnitService';
+import MassService from '../services/MassService';
 
 interface MassListProps {
   masses: IMass[];
@@ -25,7 +25,7 @@ function MassList({ masses, onDelete }: MassListProps) {
             <div key={mass.id} className="mass-card">
               <h3>{mass.name}</h3>
               <p><strong>House:</strong> {getHouse(mass.house).name}</p>
-              <p><strong>Points:</strong> {calculatePoints(mass.units)}</p>
+              <p><strong>Points:</strong> {MassService.calculatePoints(mass)}</p>
               <p><strong>Units:</strong> {mass.units?.length || 0}</p>
               <div className="card-actions">
                 <Link className="button" to={`/masses/${mass.id}`}>View</Link>

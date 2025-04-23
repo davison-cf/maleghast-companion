@@ -1,8 +1,8 @@
 import { IMass, IUnit } from '../../models';
-import { calculateUnitCount, getUnitType } from '../../services/UnitService';
+import UnitService from '../../services/UnitService';
 import { Link } from 'react-router-dom';
 import { getHouse } from '../../services/HouseService';
-import { calculateDarkPower, getMalaceLevel } from '../../services/MassService';
+import MassService from '../../services/MassService';
 import UnitDetailContainer from '../unitDetail/UnitDetailContainer';
 
 interface MassDetailPresentationProps {
@@ -40,15 +40,15 @@ function MassDetailPresentation({
         </div>
         <div className="stat-item">
           <span>Units:</span>
-          <span>{calculateUnitCount(mass.units) || 0}</span>
+          <span>{UnitService.calculateUnitCount(mass.units) || 0}</span>
         </div>
         <div className="stat-item">
           <span>Dark Power:</span>
-          <span>{calculateDarkPower(mass)}</span>
+          <span>{MassService.calculateDarkPower(mass)}</span>
         </div>
         <div className="stat-item">
           <span>Malace:</span>
-          <span>{getMalaceLevel(mass).name}</span>
+          <span>{MassService.getMalaceLevel(mass).name}</span>
         </div>
       </div>
       
@@ -75,7 +75,7 @@ function MassDetailPresentation({
                   <span className="accordion-icon">
                       {expandedUnitIndex === index ? '▼' : '+'}
                     </span>
-                    <span className="unit-type">{getUnitType(unit).name}</span>
+                    <span className="unit-type">{UnitService.getUnitType(unit).name}</span>
                     {unit.name}
                   </div>
                   
