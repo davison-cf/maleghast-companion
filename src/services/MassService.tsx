@@ -1,4 +1,4 @@
-import { IMass, IMalaceLevel } from "../models";
+import { IMass, IMalaceLevel, IUnit } from "../models";
 import MalaceLevels from "../data/malaceLevels.json"
 import UnitService from "./UnitService";
 
@@ -50,7 +50,23 @@ const MassService = {
   getMalaceLevel: function(mass: IMass): IMalaceLevel {
     const dp = this.calculateDarkPower(mass);
     return MalaceLevels.slice().reverse().find(level => level.darkPower <= dp) as IMalaceLevel;
-  }
+  },
+
+
+  addUnitToMass(mass: IMass, unit: IUnit): IMass {
+    const existingUnitIndex = mass.units.findIndex(u => u.id === unit.id);
+    let updatedUnits;
+    
+    if (existingUnitIndex >= 0) {
+      // Update existing unit logic
+    } else {
+      // Add new unit logic
+    }
+    return {
+      ...mass,
+      units: updatedUnits,
+      points: this.calculatePoints({ ...mass, units: updatedUnits })
+    };
 }
 
 export default MassService;
