@@ -2,12 +2,11 @@ import { IMass } from "../models";
 
 const storageService = {
   DB_NAME: 'massesDatabase',
-  DB_VERSION: 1,
   STORE_NAME: 'masses',
   
   openDB: (): Promise<IDBDatabase> => {
     return new Promise((resolve, reject) => {
-      const request = indexedDB.open(storageService.DB_NAME, storageService.DB_VERSION);
+      const request = indexedDB.open(storageService.DB_NAME);
       
       request.onerror = () => reject(request.error);
       request.onsuccess = () => resolve(request.result);
@@ -22,7 +21,6 @@ const storageService = {
   },
   
   saveMass: async (mass: IMass): Promise<string> => {
-    // Generate ID if needed
     if (!mass.id) {
       mass.id = Date.now().toString();
     }

@@ -6,11 +6,10 @@ export interface IUnitSimplified {
   house: HouseId;
   selectedUpgrades?: IUpgrades;
   quantity: number;
+  type: UnitTypeId;
 }
 export interface IUnit extends IUnitSimplified {
   name: string;
-  type: UnitTypeId;
-  house: HouseId;
   mv: number;
   hp: number;
   df: number;

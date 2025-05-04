@@ -22,6 +22,8 @@ function MassDetailPresentation({
   onUpdate,
   onUnitUpdate
 }: MassDetailPresentationProps) {
+  const hydratedUnits = mass.units.map(unit => UnitService.hydrateUnit(unit)).filter(e => e !== undefined);
+
   return (
     <div className="mass-detail">
       <div className="detail-header">
@@ -40,7 +42,7 @@ function MassDetailPresentation({
         </div>
         <div className="stat-item">
           <span>Units:</span>
-          <span>{UnitService.calculateUnitCount(mass.units) || 0}</span>
+          <span>{MassService.calculateUnitCount(mass) || 0}</span>
         </div>
         <div className="stat-item">
           <span>Dark Power:</span>
@@ -61,11 +63,11 @@ function MassDetailPresentation({
       
       <div className="mass-units">
         <h3>Units</h3>
-        {!mass.units || mass.units.length === 0 ? (
+        { hydratedUnits.length === 0 ? (
           <p>No units added to this mass yet.</p>
         ) : (
           <div className="units-accordion">
-            {mass.units.map((unit, index) => (
+            {hydratedUnits.map((unit, index) => (
               <div key={index} className="unit-accordion-item">
                 <div 
                   className="unit-header"
@@ -76,7 +78,7 @@ function MassDetailPresentation({
                       {expandedUnitIndex === index ? '▼' : '+'}
                     </span>
                     <span className="unit-type">{UnitService.getUnitType(unit).name}</span>
-                    {unit.name}
+                    {unit?.name}
                   </div>
                   
                     <div className="unit-quantity">{unit.quantity}</div>

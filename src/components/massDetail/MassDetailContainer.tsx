@@ -3,21 +3,18 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { IMass, IUnit } from '../../models';
 import MassDetailPresentation from './MassDetailPresentation';
 import MassService from '../../services/MassService';
+import { useMassList } from '../../hooks/useMassList';
 
-interface MassDetailContainerProps {
-  masses: IMass[];
-  onUpdate: (mass: IMass) => void;
-  onDelete: (id: string) => void;
-}
 
-function MassDetailContainer({ masses, onDelete, onUpdate }: MassDetailContainerProps) {
+function MassDetailContainer() {
+  const {masses, deleteMass, saveMass } = useMassList();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  
-  // State to track which unit is expanded
   const [expandedUnitIndex, setExpandedUnitIndex] = useState<number | null>(null);
   
-  const mass = masses.find(a => a.id === id);
+
+
+  const mass = masses.find(mass => mass.id === id);
  
   if (!mass) {
     return <div>Mass not found</div>;
@@ -28,11 +25,15 @@ function MassDetailContainer({ masses, onDelete, onUpdate }: MassDetailContainer
   const handleDelete = () => {
     if(mass.id) {
       if (window.confirm('Are you sure you want to delete this mass?')) {
-        onDelete(mass.id);
+        deleteMass(mass.id);
         navigate('/masses');
       }
     }
   };
+
+  const handleUpdate = () => {
+    saveMass(mass);
+  }
 
   const handleUnitUpdate = (unit: IUnit) =>
   {
@@ -56,7 +57,7 @@ function MassDetailContainer({ masses, onDelete, onUpdate }: MassDetailContainer
       expandedUnitIndex={expandedUnitIndex}
       handleDelete={handleDelete}
       toggleUnit={toggleUnit}
-      onUpdate={onUpdate}
+      onUpdate={handleUpdate}
       onUnitUpdate={handleUnitUpdate}
     />
   );

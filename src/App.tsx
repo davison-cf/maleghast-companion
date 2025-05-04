@@ -6,47 +6,9 @@ import MassList from './components/MassList';
 import ThemeSelector from './components/ThemeSelector';
 import MassDetailContainer from './components/massDetail/MassDetailContainer';
 import MassBuilderContainer from './components/massBuilder/MassBuilderContainer';
+import { MassProvider } from './components/MassContext';
 
-function App() {
-  const [masses, setMasses] = useState<IMass[]>([]);
-  
-  // Load masses from storage when the app starts
-  useEffect(() => {
-    const storedMasses =  async ()=>{
-      try
-      {
-        setMasses(await storageService.loadAllMasses());   
-      } 
-      catch (error) { 
-        //woops
-      } 
-    }
-    storedMasses();
-  }, []);
-  
-  // Handlers for CRUD operations
-  const handleCreate = (mass: IMass) => {
-    // Generate ID if needed
-    const newMass = { ...mass, id: Date.now().toString() };
-    const updatedMasses = [...masses, newMass];
-    setMasses(updatedMasses);
-    updatedMasses.map(mass=>storageService.saveMass(mass)); // Save to storage
-  };
-  
-  const handleUpdate = (updatedMass: IMass) => {
-    const updatedMasses = masses.map(mass => 
-      mass.id === updatedMass.id ? updatedMass : mass
-    );
-    setMasses(updatedMasses);
-    updatedMasses.map(mass=>storageService.saveMass(mass)); // Save to storage
-  };
-  
-  const handleDelete = (id: string) => {
-    storageService.deleteMass(id)
-    const updatedMasses = masses.filter(mass => mass.id !== id);
-    setMasses(updatedMasses);
-  };
-  
+function App() { 
   return (
     <BrowserRouter>
       <div className="app">
@@ -61,28 +23,25 @@ function App() {
         <ThemeSelector />
         <div className="svg-background" aria-hidden="true"></div>
         <main className="app-content">
-          <Routes>
-            <Route 
-              path="/" 
-              element={<MassList masses={masses} onDelete={handleDelete} />} 
-            />
-            <Route 
-              path="/masses" 
-              element={<MassList masses={masses} onDelete={handleDelete} />} 
-            />
-            <Route 
-              path="/masses/:id" 
-              element={<MassDetailContainer masses={masses} onUpdate={handleUpdate} onDelete={handleDelete} />} 
-            />
-            <Route 
-              path="/builder" 
-              element={<MassBuilderContainer onCreate={handleCreate} />} 
-            />
-            <Route 
-              path="/builder/:id" 
-              element={<MassBuilderContainer masses={masses} onUpdate={handleUpdate} />} 
-            />
-          </Routes>
+          <MassProvider>
+            <Routes>
+              <Route path="/" 
+                element={<MassList />} 
+              />
+              <Route path="/masses" 
+                element={<MassList />} 
+              />
+              <Route path="/masses/:id" 
+                element={<MassDetailContainer />} 
+              />
+              <Route path="/builder" 
+                element={<MassBuilderContainer />} 
+              />
+              <Route path="/builder/:id" 
+                element={<MassBuilderContainer />} 
+              />
+            </Routes>
+          </MassProvider>
         </main>
         <footer className="app-footer">
           <p>Maleghast Mass Builder v0.1</p>

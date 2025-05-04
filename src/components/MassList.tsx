@@ -2,13 +2,16 @@ import { Link } from 'react-router-dom';
 import { IMass } from '../models';
 import { getHouse } from '../services/HouseService';
 import MassService from '../services/MassService';
+import { useMassList } from '../hooks/useMassList';
 
-interface MassListProps {
-  masses: IMass[];
-  onDelete: (id: string) => void;
-}
+function MassList() {
 
-function MassList({ masses, onDelete }: MassListProps) {
+  const { masses, deleteMass } = useMassList();
+
+  const handleDelete = (id: string) => {
+    deleteMass(id);
+  };
+
   return (
     <div className="mass-list">
       <h2>My Masses</h2>
@@ -30,7 +33,7 @@ function MassList({ masses, onDelete }: MassListProps) {
               <div className="card-actions">
                 <Link className="button" to={`/masses/${mass.id}`}>View</Link>
                 <Link className="button" to={`/builder/${mass.id}`}>Edit</Link>
-                <button onClick={() => onDelete(mass.id ?? '')}>Delete</button>
+                <button onClick={() => handleDelete(mass.id ?? '')}>Delete</button>
               </div>
             </div>
           ))}

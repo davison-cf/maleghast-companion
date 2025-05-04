@@ -8,8 +8,10 @@ import gargamoxUnits from '../data/units/gargamox-units.json'
 import deadsoulsUnits from '../data/units/deadsouls-units.json'
 import abhorrersUnits from '../data/units/abhorrers-units.json'
 import igorriUnits from '../data/units/igorri-units.json'
+import steeplewrackUnits from '../data/units/steeplewracks-units.json'
 import unitTypes from '../data/unitTypes.json'
 import { IUnitType } from "../models/UnitType";
+import { Z_ASCII } from "zlib";
 
 
 
@@ -75,7 +77,7 @@ const UnitService = {
     return units;
   },
 
-  mapSimpleUnitToUnit: function(sUnit: IUnitSimplified): IUnit | undefined
+  hydrateUnit: function(sUnit: IUnitSimplified): IUnit
   {
     var units = this.getUnitsForHouse(sUnit.house);
     var unit = units.find(u => u.id === sUnit.id)
@@ -86,7 +88,17 @@ const UnitService = {
         ...sUnit
       }
     }
-    return unit;
+    return {
+      ...sUnit,
+      name: "Unit Not Found",
+      mv: 0,
+      hp: 0,
+      df:0,
+      armor:'',
+      abilities: [],
+      traits: [],
+      upgrades: undefined
+    };
   },
   
   getUnitsForHouse: function (house: HouseId): IUnit[]
@@ -122,13 +134,18 @@ const UnitService = {
     {
       units = units.concat(this.mapRawUnitsToTypedUnits(igorriUnits));
     }
+
+    if(house === HouseId.Steeplewrack || house === HouseId.Heretic)
+    {
+      units = units.concat(this.mapRawUnitsToTypedUnits(steeplewrackUnits));
+    }
   
     return units;
   },
   
-  getUnitPoints: (unit: IUnit): number =>
+  getUnitPoints: (unit: IUnitSimplified): number =>
   {
-    return unitTypes.find(ut => ut.id === unit.type)?.pointValue || 1;
+    return unitTypes.find(ut => ut.id === unit.id)?.pointValue || 1;
   },
   
   getUnitType: (unit: IUnit): IUnitType =>
@@ -136,16 +153,9 @@ const UnitService = {
     return unitTypes.find(ut => ut.id === unit.type) as IUnitType;
   },
   
-  calculatePoints: function (unit: IUnit)
+  calculatePoints: function (unit: IUnitSimplified)
   {
-    return this.getUnitPoints(unit) * unit.quantity;;
-  },
-  
-  calculateUnitCount: (units: IUnit[]) =>
-  {
-    let sum = 0;
-    units.forEach(unit => sum += unit.quantity )
-    return sum;
+    return this.getUnitPoints(unit) * unit.quantity;
   },
   
   calculateUnitDarkPower: (unit: IUnit): number =>

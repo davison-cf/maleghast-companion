@@ -1,4 +1,4 @@
-import { IUnit } from './';
+import { IUnitSimplified } from './';
 import { HouseId } from './enums';
 
 export interface IMass {
@@ -6,6 +6,6 @@ export interface IMass {
   name: string;
   house: HouseId;
   points: number;
-  units: IUnit[];
+  units: IUnitSimplified[];
   description: string;
 }

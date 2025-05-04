@@ -6,7 +6,6 @@ import { ChangeEvent, FormEvent } from 'react';
 import MassService from '../../services/MassService';
 
 interface MassBuilderPresentationProps {
-  id: string | undefined;
   isLoading: boolean;
   error: string | undefined;
   successMessage: string | undefined;
@@ -22,7 +21,6 @@ interface MassBuilderPresentationProps {
 }
 
 function MassBuilderPresentation({
-  id,
   isLoading,
   error,
   successMessage,
@@ -37,9 +35,11 @@ function MassBuilderPresentation({
   removeUnit
 }: MassBuilderPresentationProps) {
   const navigate = useNavigate();
+  const hydratedUnits = mass.units.map(unit => UnitService.hydrateUnit(unit)).filter(e => e !== undefined);
+
   return (
     <div className="mass-builder">
-      <h2>{id ? 'Edit Mass' : 'Create New Mass'}</h2>
+      <h2>{mass.id ? 'Edit Mass' : 'Create New Mass'}</h2>
          
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -140,7 +140,7 @@ function MassBuilderPresentation({
                </button>
              </div>
              
-             {mass.units && mass.units.length > 0 ? (
+             {hydratedUnits.length > 0 ? (
                <div className="units-table">
                  <table>
                    <thead>
@@ -152,7 +152,7 @@ function MassBuilderPresentation({
                      </tr>
                    </thead>
                    <tbody>
-                     {mass.units.map((unit, index) => (
+                     {hydratedUnits.map((unit, index) => (
                        <tr key={index}>
                          <td>{unit.name}</td>
                          <td>{unit.type}</td>
@@ -178,7 +178,7 @@ function MassBuilderPresentation({
            </div>
            
            <div className="form-actions">
-             <button type="submit">{id ? 'Update Mass' : 'Create Mass'}</button>
+             <button type="submit">{mass.id ? 'Update Mass' : 'Create Mass'}</button>
              <button type="button" onClick={() => navigate('/masses')}>Cancel</button>
            </div>
         </form>
