@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/maleghast-companion/static/css/main.34cadee5.css",
+    "main.js": "/maleghast-companion/static/js/main.6aa8d776.js",
+    "static/js/453.994a2dd4.chunk.js": "/maleghast-companion/static/js/453.994a2dd4.chunk.js",
+    "static/media/Deadsouls.svg": "/maleghast-companion/static/media/Deadsouls.d2e7d9e36adb4ef5d7a9.svg",
+    "static/media/Gargamox.svg": "/maleghast-companion/static/media/Gargamox.96aa2141d72338f080c4.svg",
+    "static/media/Goregrinders.svg": "/maleghast-companion/static/media/Goregrinders.9e1307aa76afd061aa9e.svg",
+    "static/media/Maleghast.svg": "/maleghast-companion/static/media/Maleghast.44cbd6ea58ddcdcbdf48.svg",
+    "static/media/Abhorrers.svg": "/maleghast-companion/static/media/Abhorrers.1a29b7643a2830f0a931.svg",
+    "static/media/CARCASS.svg": "/maleghast-companion/static/media/CARCASS.890f7feb1f62026123b4.svg",
+    "static/media/Igorri.svg": "/maleghast-companion/static/media/Igorri.de82705d7b692e354632.svg",
+    "index.html": "/maleghast-companion/index.html",
+    "main.34cadee5.css.map": "/maleghast-companion/static/css/main.34cadee5.css.map",
+    "main.6aa8d776.js.map": "/maleghast-companion/static/js/main.6aa8d776.js.map",
+    "453.994a2dd4.chunk.js.map": "/maleghast-companion/static/js/453.994a2dd4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34cadee5.css",
+    "static/js/main.6aa8d776.js"
+  ]
+}
