@@ -1,18 +1,18 @@
 [
   {
-    "name": "Gunwight",
-    "id": "gunwight",
+    "name": "Stitch",
+    "id": "stitch",
     "type": "thrall",
-    "house": "carcass",
-    "mv": 2,
+    "house": "igorri",
+    "mv": 3,
     "hp": 2,
     "df": 4,
     "armor": "",
     "traits": [
       {
-        "name": "Formation",
-        "id": "formation",
-        "description": ""
+        "name": "Fall to Shambles",
+        "id": "fallToShambles",
+        "description": "When slain, leaves an extra corpse token in an adjacent space (two corpses total)"
       },
       {
         "name": "Thrall",
@@ -22,33 +22,399 @@
     ],
     "abilities": [
       {
-        "name": "OL45",
-        "id": "ol45",
-        "type": "Attack, range 2-3, reload",
-        "description": "On hit: 1 damage, ignoring armor. Headshot: inflict 1 vulnerable"
+        "name": "Unstable Mutation",
+        "id": "unstableMutation",
+        "type": "Self",
+        "description": "Effect: Gain 1 strength, (4+) 1 speed, (5+) and 1 vitality, (6+) and explode for splash (self): 1 damage. Spare parts: Roll +1D per corpse and pick the highest result."
       },
       {
-        "name": "Baton",
-        "id": "baton",
-        "type": "Push, melee",
-        "description": "Effect: Push 1 and (3+) inflict 1 vulnerable."
+        "name": "Twisting Strike",
+        "id": "twistingStrike",
+        "type": "Attack, Melee",
+        "description": "On hit: 1 damage. Effect: Mutate"
       }
     ],
     "upgrades": [
       {
-        "name": "Brace",
-        "id": "brace",
-        "description": "While in cover, attacks gain +1 max range and push 1 on hit."
+        "name": "Genestealer",
+        "id": "genestealer",
+        "description": "Twisting strike gains Effect (5+): steal a positive token from target."
       },
       {
-        "name": "Tactical Reload",
-        "id": "tacticalReload",
-        "description": "Gain Headshot: reload and gain 1 strength"
+        "name": "Spread Mutate",
+        "id": "spreadMutate",
+        "description": "Twisting strike also causes an adjacent ally to mutate."
       },
       {
-        "name": "Scavenge Ammo",
-        "id": "scavengeAmmo",
-        "description": "May consume one adjacent corpse before or after ACTing to reload and gain 1 strength."
+        "name": "Warping Mutate",
+        "id": "warpingMutate",
+        "description": "May step 1 (4+) or 3 spaces before Unstable mutation"
+      }
+    ]
+  },
+  {
+    "name": "Lycan",
+    "id": "lycan",
+    "type": "horror",
+    "house": "igorri",
+    "mv": 4,
+    "hp": 4,
+    "df": 4,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Lope",
+        "id": "lope",
+        "description": "Has free movement and ignores hazards in spaces occupied by corpses."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Bloodgorger",
+        "id": "bloodgorger",
+        "type": "Self",
+        "description": "Effect: Mutate, then gain 1 strength. Spare Parts: Then gain (3+) 1 speed, (5+) and 1 vitality, (6+) then mutate again. Roll 1D per corpse consumed for the effect."
+      },
+      {
+        "name": "Bloody Slashes",
+        "id": "bloodySlashes",
+        "type": "Attack, Melee",
+        "description": "On hit: 1 damage. Effect: splash (self): 1 damage."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "The Hunger",
+        "id": "theHunger",
+        "description": "If starting turn in range 2 of a corpse, may step 2"
+      },
+      {
+        "name": "Autophagia",
+        "id": "autophagia",
+        "description": "At turn start, may deal 1 damage to self, ignoring armor, to generate a corpse in an adjacent space"
+      },
+      {
+        "name": "Hunch",
+        "id": "hunch",
+        "description": "May use corpses as cover spaces"
+      }
+    ]
+  },
+  {
+    "name": "Chop Doc",
+    "id": "chopDoc",
+    "type": "freak",
+    "house": "igorri",
+    "mv": 4,
+    "hp": 4,
+    "df": 4,
+    "armor": "MAG",
+    "traits": [
+      {
+        "name": "Leftovers",
+        "id": "leftovers",
+        "description": "Has a 4+ effect chance after MOVEing to drop a corpse in a free adjacent space"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Inject Mutagen",
+        "id": "injectMutagen",
+        "type": "Range 3",
+        "description": "Effect: One or two units in range mutate. Spare parts: and also dole out 1 strength per corpse consumed."
+      },
+      {
+        "name": "Purge",
+        "id": "purge",
+        "type": "Curse, Range 3",
+        "description": "Effect: A unit in range removes one token of this unit’s choice (3+): two (5+) all"
+      },
+      {
+        "name": "Marriage",
+        "id": "marriage",
+        "type": "Range 2",
+        "description": "Effect: Instantly slay self or an allied unit in range. Another allied unit in range gains 2 speed, vitality, and strength, or just 1 if the slain unit was a thrall."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Absorb",
+        "id": "absorb",
+        "description": "May grant one of the tokens stolen by Purge to another unit in range"
+      },
+      {
+        "name": "Scour Flesh",
+        "id": "scourFlesh",
+        "description": "Purge deals 1 toxic damage to foes"
+      },
+      {
+        "name": "Conjoin",
+        "id": "conjoin",
+        "description": "IF targeting self, Marriage also clears all negative tokens on target first"
+      }
+    ]
+  },
+  {
+    "name": "Strigoi",
+    "id": "strigoi",
+    "type": "hunter",
+    "house": "igorri",
+    "mv": 3,
+    "hp": 4,
+    "df": 4,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Flight",
+        "id": "flight",
+        "description": "Ignores adverse terrain and elevation attack and movement penalties"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Regurgitate",
+        "id": "regurgitate",
+        "type": "Range 2-4",
+        "description": "Effect: Splash (target): Create a corpse in the area for every unit in the area, up to three times, then mutate."
+      },
+      {
+        "name": "Sin Eater",
+        "id": "sinEater",
+        "type": "Range 2-4, Attack",
+        "description": "On hit: 1 damage. Effect: Steal a positive token from target. Spare Parts: plus one more token per corpse consumed. If target has no positive tokens, gain 1 strength instead of stealing a token"
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Drown in Viscera",
+        "id": "drownInViscera",
+        "description": "Regurgitate has a 5+ effect chance to strip a token of your choice from each foe in the area."
+      },
+      {
+        "name": "Rapid Adaptation",
+        "id": "rapidAdaptation",
+        "description": "May mutate once for each corpse created with Regurgitate instead."
+      },
+      {
+        "name": "Cleansing Wash",
+        "id": "cleansingWash",
+        "description": "Regurgitate has a 5+ effect chance to remove a negative token from an ally caught in the area"
+      }
+    ]
+  },
+  {
+    "name": "Homonculus",
+    "id": "homonculus",
+    "type": "tyrant",
+    "house": "igorri",
+    "mv": 4,
+    "hp": 6,
+    "df": 3,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Warpflesh",
+        "id": "warpflesh",
+        "description": "Starts combat with 4 mutation tokens"
+      },
+      {
+        "name": "Tyrant",
+        "id": "tyrantTrait",
+        "description": "2x2 unit"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Sculpt Flesh",
+        "id": "sculptFlesh",
+        "type": "Self",
+        "description": "Effect: Gain 1 strength, OR 1 speed, OR 1 vitality. Spare parts: Repeat this effect once for each corpse consumed."
+      },
+      {
+        "name": "Absorb",
+        "id": "absorb",
+        "type": "Attack, Melee",
+        "description": "Effect: Deal 1 devil damage to an adjacent unit. If reduce to 0 hp, obliterates unit and the homunculus gains any tokens the absorbed unit had."
+      },
+      {
+        "name": "Flesh Whip",
+        "id": "fleshWhip",
+        "type": "Attack, Range 1-2",
+        "description": "On hit: 1 damage and splash (target): 1 damage and (4+) create one (6+) or two corpse tokens in an adjacent space to target."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Ball of Limbs",
+        "id": "ballOfLimbs",
+        "description": "When choosing to MOVE again, destroys walls and absorbs corpses it moves over, mutating each time"
+      },
+      {
+        "name": "Meld",
+        "id": "meld",
+        "description": "When absorbing allies, slays instead of obliterating them, and this unit mutates."
+      },
+      {
+        "name": "Form Carapace",
+        "id": "formCarapace",
+        "description": "If absorb destroys a unit, gains physical armor for the rest of combat."
+      }
+    ]
+  },
+  {
+    "name": "Chirurgeon",
+    "id": "chirurgeon",
+    "type": "necromancer",
+    "house": "igorri",
+    "mv": 4,
+    "hp": 10,
+    "df": 3,
+    "armor": "MAG",
+    "traits": [
+      {
+        "name": "Polyglot",
+        "id": "polyglot",
+        "description": "At turn start, may convert one of this unit's mutation tokens into strength, speed, or vitality. Then, mutate."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Experimental Surgery",
+        "id": "experimentalSurgery",
+        "type": "Line 4.",
+        "description": "Line: 1 damage. Effect: Allies in the line mutate instead of taking damage."
+      }
+    ],
+    "soulAbilities": [
+      {
+        "name": "Wild Mutation",
+        "id": "wildMutation",
+        "cost": 1,
+        "timing": "Own or Allied Turn, Range 4.",
+        "description": "Trigger: Turn start. Effect: Unit gains 1 strength, (3-4) OR 1 speed, (5-6) OR 1 vitality. Spare Parts: May choose one token per corpse consumed instead of rolling."
+      },
+      {
+        "name": "Sample Genome",
+        "id": "sampleGenome",
+        "cost": 3,
+        "timing": "Own or Allied Turn, range 4.",
+        "description": "Copy all positive tokens on target unit, then grant them to another unit in range."
+      }
+    ],
+    "upgrades": [
+      {
+        "type": "trait",
+        "upgrade": [
+          {
+            "name": "Accelerate Evolution",
+            "id": "accelerateEvolution",
+            "description": "At turn end, may remove one token from this unit and grant to a unit in range 2."
+          },
+          {
+            "name": "Rapid Move",
+            "id": "rapidMove",
+            "description": "May remove a mutation token at start of end of own turn to step 2."
+          },
+          {
+            "name": "Ancillary Limbs",
+            "id": "ancillaryLimbs",
+            "description": "May remove a mutation token on self to grant +1D on any attack and allow it to ignore cover."
+          }
+        ]
+      },
+      {
+        "type": "ability",
+        "upgrade": [
+          {
+            "name": "New Material",
+            "id": "newMaterial",
+            "type": "Self",
+            "description": "Create one, (3+) two, (5+) three corpses in free adjacent spaces, then mutate once for each corpse created."
+          },
+          {
+            "name": "Clone",
+            "id": "clone",
+            "type": "Range 2.",
+            "description": "Create a perfect copy of an allied unit in range in any other free space in range. Then obliterate the original as it collapses into flesh and replace it with a corpse token."
+          },
+          {
+            "name": "Stitch Fix",
+            "id": "stitchFix",
+            "type": "Range 3.",
+            "description": "Effect: Remove up to three negative tokens from a unit, then it may step 1 and it mutates. Spare Parts: The unit mutates and steps once for each negative token removed instead."
+          },
+          {
+            "name": "Inject Stimulant",
+            "id": "injectStimulant",
+            "type": "Range 3.",
+            "description": "Effect: Choose a unit in range. That unit may step 2. If it ends its turn in the space of a corpse, it mutates, removes the corpse, then may repeat this effect."
+          },
+          {
+            "name": "Biotoxin Injector",
+            "id": "biotoxinInjector",
+            "type": "Attack, range 2-5.",
+            "description": "On hit: 1 toxin damage. Effect: At end of target's next turn, they explode for a splash (target) effect for 1 toxin damage. Your allies in the area mutate instead of taking damage."
+          },
+          {
+            "name": "Mutagen Injector",
+            "id": "mutagenInjector",
+            "type": "Attack, Range 2-5.",
+            "description": "On hit: May remove one positive token from target, then deal 1 toxin damage. Spare Parts: Repeat this effect once."
+          },
+          {
+            "name": "Chaos Beam",
+            "id": "chaosBeam",
+            "type": "Line 3.",
+            "description": "Effect: Line: 1 fire damage and inflict 1 vulnerable, (3-4) OR 1 toxic damage and inflict 1 slow, (5-6) OR 1 curse damage and inflict 1 weak. Spare Parts: Roll 1D for effect per corpse consumed and choose any result."
+          }
+        ]
+      },
+      {
+        "type": "soulAbility",
+        "upgrade": [
+          {
+            "name": "Flesh Jump",
+            "id": "fleshJump",
+            "cost": 1,
+            "timing": "Own or allied turn. Range 3.",
+            "description": "Effect: Swap places with an allied unit, then both of you mutate."
+          },
+          {
+            "name": "Grow Bonus Legs",
+            "id": "growBonusLegs",
+            "cost": 2,
+            "timing": "Own or Allied turn. Range 3.",
+            "description": "Effect: Remove any number of mutation tokens on self or target unit, then target may step 2 per token removed with free movement, ignoring hazards."
+          },
+          {
+            "name": "Grow Bonus Limbs",
+            "id": "growBonusLimbs",
+            "cost": 2,
+            "timing": "Own or Allied turn, range 3.",
+            "description": "Trigger: Turn start. Effect: Remove any number of mutation tokens from target, then target gains +1D on attacks this turn per token removed, and their damage ignores armor."
+          },
+          {
+            "name": "Recycle",
+            "id": "recycle",
+            "cost": 3,
+            "timing": "Curse, Any turn.",
+            "description": "Trigger: Turn end. Effect: Deal 1 toxic damage to unit. If this reduces them to 0 hp, they are obliterated. Create up to 3 corpse tokens under their space or in free adjacent spaces."
+          },
+          {
+            "name": "Devolve",
+            "id": "devolve",
+            "cost": 4,
+            "timing": "Curse, Foe turn. Range 3.",
+            "description": "Trigger: Turn start. Effect: Inflict 1 slow, weak, and vulnerable on a foe (5+) twice."
+          },
+          {
+            "name": "Final Form",
+            "id": "finalForm",
+            "cost": 6,
+            "timing": "Own turn",
+            "description": "Trigger: Turn start. Effect: Increase MV to 6, DF to 6+, gain 6 strength, become curseproof, gain free movement, and gain super armor. Keep any damage taken. At the end of your next turn, your form destabilizes and you are obliterated."
+          }
+        ]
       }
     ]
   }

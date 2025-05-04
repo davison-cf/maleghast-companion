@@ -1,54 +1,431 @@
 [
   {
-    "name": "Gunwight",
-    "id": "gunwight",
-    "type": "thrall",
-    "house": "carcass",
-    "mv": 2,
-    "hp": 2,
-    "df": 4,
-    "armor": "",
+    "name": "Penitent",
+    "id": "penitent",
+    "type": "scion",
+    "house": "abhorrers",
+    "mv": 4,
+    "hp": 3,
+    "df": 2,
+    "armor": "SUPER",
     "traits": [
       {
-        "name": "Formation",
-        "id": "formation",
-        "description": ""
-      },
-      {
-        "name": "Thrall",
-        "id": "thrallTrait",
+        "name": "Miracle",
+        "id": "miracle",
         "description": ""
       }
     ],
     "abilities": [
       {
-        "name": "OL45",
-        "id": "ol45",
-        "type": "Attack, range 2-3, reload",
-        "description": "On hit: 1 damage, ignoring armor. Headshot: inflict 1 vulnerable"
+        "name": "Mea Culpa",
+        "id": "meaCulpa",
+        "type": "Self",
+        "description": "Splash (self): Remove one negative token from all allies in range and place them on this unit. Then remove one, (4+) two, or (6+) all negative tokens from this unit, and gain 1 strength for each negative token removed this way."
       },
       {
-        "name": "Baton",
-        "id": "baton",
-        "type": "Push, melee",
-        "description": "Effect: Push 1 and (3+) inflict 1 vulnerable."
+        "name": "Holy Water",
+        "id": "holyWater",
+        "type": "Range 2-3",
+        "description": "Effect: 1 holy damage and (4+) create a hazard under target."
+      },
+      {
+        "name": "Excoriate",
+        "id": "excoriate",
+        "type": "Attack, Melee",
+        "description": "On hit: 1 damage, and Stance (Odd): Splash (self): 1 holy damage. (Even): gain 1 vitality."
       }
     ],
     "upgrades": [
       {
-        "name": "Brace",
-        "id": "brace",
-        "description": "While in cover, attacks gain +1 max range and push 1 on hit."
+        "name": "Holy Blood",
+        "id": "holyBlood",
+        "description": "Mea Culpa creates one or (4+) two hazards in free adjacent spaces."
       },
       {
-        "name": "Tactical Reload",
-        "id": "tacticalReload",
-        "description": "Gain Headshot: reload and gain 1 strength"
+        "name": "Eager",
+        "id": "eager",
+        "description": "May step 2 before using Mea Culpa"
       },
       {
-        "name": "Scavenge Ammo",
-        "id": "scavengeAmmo",
-        "description": "May consume one adjacent corpse before or after ACTing to reload and gain 1 strength."
+        "name": "Taste the Lash",
+        "id": "tasteTheLash",
+        "description": "Stance (round 4+): Excoriate triggers both effects"
+      }
+    ]
+  },
+  {
+    "name": "Antipriest",
+    "id": "antipriest",
+    "type": "freak",
+    "house": "abhorrers",
+    "mv": 3,
+    "hp": 4,
+    "df": 3,
+    "armor": "MAG",
+    "traits": [
+      {
+        "name": "Miracle",
+        "id": "miracle",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Gentleness",
+        "id": "gentleness",
+        "type": "Self",
+        "description": "Effect: Become unable to MOVE, step, or be pushed or pulled until start of this unit’s next turn. At the start of that turn, allied units adjacent to this unit gain 1 vitality."
+      },
+      {
+        "name": "Delay Judgement",
+        "id": "delayJudgement",
+        "type": "Range 3",
+        "description": "Effect: An allied unit in range gains miracle. If it already had miracle, miracle triggers on a 2+ until the end of their next turn. At the end of that unit's turn, they lose miracle."
+      },
+      {
+        "name": "Blessed Censer",
+        "id": "blessedCenser",
+        "type": "Self",
+        "description": "Effect: Splash (self): Stance (Even): Allies gain 1 vitality. (Odd): foes take 1 holy damage."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Cleansing Prayer",
+        "id": "cleansingPrayer",
+        "description": "Self and adjacent units are curseproof during gentleness."
+      },
+      {
+        "name": "Consecrate",
+        "id": "consecrate",
+        "description": "Blessed Censer may remove corpses in range."
+      },
+      {
+        "name": "Boiling Censer",
+        "id": "boilingCenser",
+        "description": "Stance (Round 4+): Blessed Censer's effects trigger twice"
+      }
+    ]
+  },
+  {
+    "name": "Zealot",
+    "id": "zealot",
+    "type": "horror",
+    "house": "abhorrers",
+    "mv": 4,
+    "hp": 4,
+    "df": 4,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Miracle",
+        "id": "miracle",
+        "description": ""
+      },
+      {
+        "name": "Zealotry",
+        "id": "zealotry",
+        "description": "When MOVEing again, gain 1 vitality"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Smite",
+        "id": "smite",
+        "type": "Self",
+        "description": "Stance: The next use of Whirling Chain deals +damage equal to half the round number, rounded up and this unit may also step that many spaces before using it."
+      },
+      {
+        "name": "Whirling Chain",
+        "id": "whirlingChain",
+        "type": "Attack, Range 2",
+        "description": "On hit: 2 damage. Stance (Odd): and MOVE again, Stance (Even): and push unit 2"
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Punisher",
+        "id": "punisher",
+        "description": "Stance: Whirling chain obliterates foes it slays at round 3+"
+      },
+      {
+        "name": "Suffuse",
+        "id": "suffuse",
+        "description": "Whirling Chain gains effect (5+): gain 1 vitality and remove a negative token from this unit."
+      },
+      {
+        "name": "Fiery Chain",
+        "id": "fieryChain",
+        "description": "Whirling chain creates a hazard adjacent to its target after it resolves"
+      }
+    ]
+  },
+  {
+    "name": "Inquisitor",
+    "id": "inquisitor",
+    "type": "hunter",
+    "house": "abhorrers",
+    "mv": 3,
+    "hp": 4,
+    "df": 3,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Miracle",
+        "id": "miracle",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Winch",
+        "id": "winch",
+        "type": "Self",
+        "description": "Effect: Step 1. Next attack from this unit gains +1D and +2 maximum range. This effect stacks."
+      },
+      {
+        "name": "Requiesce en Pace",
+        "id": "requiesceEnPace:",
+        "type": "Attack, Range 2-3",
+        "description": "On hit: 2 damage. Stance (Round 3+): ignoring armor. (Round 5+): 4 damage, ignoring armor."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Focus",
+        "id": "focus",
+        "description": "If this unit does not move during its turn, it may remove a negative token from itself."
+      },
+      {
+        "name": "Heart Destroyer",
+        "id": "heartDestroyer",
+        "description": "Stance: Requiesce en Pace obliterates units it slays at round 3+."
+      },
+      {
+        "name": "Explosive Bolts",
+        "id": "explosiveBolts",
+        "description": "Stance: Requiesce en Pace pushes units one, (Round 3+) two, or (Round 5+) four spaces."
+      }
+    ]
+  },
+  {
+    "name": "Holy Body",
+    "id": "holyBody",
+    "type": "tyrant",
+    "house": "abhorrers",
+    "mv": 3,
+    "hp": 3,
+    "df": 2,
+    "armor": "SUPER",
+    "traits": [
+      {
+        "name": "Flight",
+        "id": "flight",
+        "description": "Ignores adverse terrain and elevation attack and movement penalties"
+      },
+      {
+        "name": "Miraculous flesh",
+        "id": "miraculousFlesh",
+        "description": "Lacks miracle, but starts combat with 4 vitality tokens."
+      },
+      {
+        "name": "Tyrant",
+        "id": "tyrantTrait",
+        "description": "2x2 unit"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Bolides",
+        "id": "bolides",
+        "type": "Range 2-6",
+        "description": "Effect: Create one, (3+) two, (5+) or three hazards in range, ignoring line of sight."
+      },
+      {
+        "name": "Indignation",
+        "id": "indignation",
+        "type": "Self, Range 3-6",
+        "description": "Effect: Remove one or two vitality tokens on this unit, then deal 1 holy damage to that many units in range, and push those units 1."
+      },
+      {
+        "name": "Ablutions",
+        "id": "ablutions",
+        "type": "Self",
+        "description": "Effect: Gain two vitality. Until the start of this unit's next turn, adjacent allies may spend vitality tokens on this unit as if they were their own."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Scathe",
+        "id": "scathe",
+        "description": "Hazards from Bolides can be created under units."
+      },
+      {
+        "name": "Holy Font",
+        "id": "holyFont",
+        "description": "Ablutions gains stance (round 3+): gain 3 vitality instead, (round 5+): gain 4 vitality instead."
+      },
+      {
+        "name": "Witness",
+        "id": "witness",
+        "description": "Indignation gains stance (round 4+): deal 2 holy damage instead."
+      }
+    ]
+  },
+  {
+    "name": "Exorcist",
+    "id": "exorcist",
+    "type": "necromancer",
+    "house": "abhorror",
+    "mv": 4,
+    "hp": 10,
+    "df": 4,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Holy Vessel",
+        "id": "holyVessel",
+        "description": "Lacks Miracle. However, while alive, miracle triggers for adjacent allies on a 4+, and gain 1 SOUL the first time it triggers in a round."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Starmetal Godsword",
+        "id": "starmetalGodsword",
+        "type": "Melee, Attack.",
+        "description": "On hit: 1 damage. Stance (Odd): and step 2, Stance (Even): and gain 1 vitality, Stance (Round 5+): Increase damage to 3"
+      }
+    ],
+    "soulAbilities": [
+      {
+        "name": "Absolution",
+        "id": "absolution",
+        "cost": 1,
+        "timing": "Any turn, Range 2-6.",
+        "description": "Trigger: Turn start. Effect: Self takes 1 damage, ignoring armor. One allied unit in range gains one, (3+) two, or (5+) three vitality."
+      },
+      {
+        "name": "Will of God",
+        "id": "willOfGod",
+        "cost": 3,
+        "timing": "Own or Allied Turn, range 3.",
+        "description": "Trigger: Turn start. Effect: For this turn only, self or allied unit in range may treat the current round number as either 2 or 5."
+      }
+    ],
+    "upgrades": [
+      {
+        "type": "trait",
+        "upgrade": [
+          {
+            "name": "Winter Rose Stance",
+            "id": "winterRoseStance",
+            "description": "Stance: (Round 3+): Attacks cannot miss (all misses turn into hits)."
+          },
+          {
+            "name": "Corpse Violet Stance",
+            "id": "corpseVioletStance",
+            "description": "Stance: (Round 3+): Gain either physical or magical armor (choose)."
+          },
+          {
+            "name": "Royal Chrysanthemum Stance",
+            "id": "royalChrysanthemumStance",
+            "description": "Stance (Round 3+): May step 2 after acting."
+          }
+        ]
+      },
+      {
+        "type": "ability",
+        "upgrade": [
+          {
+            "name": "Grand Oath",
+            "id": "grandOath",
+            "type": "Self",
+            "description": "Effect: Splash (self). Self and allies in the area may convert any number of vitality to strength."
+          },
+          {
+            "name": "Redempta",
+            "id": "redempta",
+            "type": "Range 4.",
+            "description": "Effect: Remove all negative tokens on an ally, then transfer to self. That ally gains 1 vitality per negative token removed and becomes curseproof until the start of its next turn."
+          },
+          {
+            "name": "Communion",
+            "id": "communion",
+            "type": "Self",
+            "description": "Effect: Until end of next turn, self and adjacent allies may spend this unit's hp as if it were vitality tokens."
+          },
+          {
+            "name": "Decree of Forbiddance",
+            "id": "decreeOfForbiddance",
+            "type": "Curse, Self.",
+            "description": "Effect: Until end of next turn, foes ending their turn in range 2 of this unit have a hazard created under them, then are pushed 1."
+          },
+          {
+            "name": "Holy Water Flail",
+            "id": "holyWaterFlail",
+            "type": "Attack, range 2-3.",
+            "description": "On hit: 1 holy damage and splash (target): 1 holy damage. Stance (Round 3+): and create a hazard under target (round 5+) all targets in the area."
+          },
+          {
+            "name": "Relic Lance",
+            "id": "relicLance",
+            "type": "Attack, Melee.",
+            "description": "On hit: 2 damage. Stance: May step spaces equal to the round number with free movement, in a straight line, before the attack. On hit, push target half that many spaces."
+          },
+          {
+            "name": "Starmetal Shuriken",
+            "id": "starmetalShuriken",
+            "type": "Attack, range 2-5.",
+            "description": "On hit: 1 damage. Stance: Roll the effect die. If you roll under the round number, deal 1 holy damage again. If you roll exactly the round number, deal 2 holy damage again instead."
+          }
+        ]
+      },
+      {
+        "type": "soulAbility",
+        "upgrade": [
+          {
+            "name": "Sword Art: Drifting Blossoms",
+            "id": "swordArtDriftingBlossoms",
+            "cost": 1,
+            "timing": "Any turn",
+            "description": "Trigger: A unit MOVEs, and that move resolves. Effect: Stance: Step spaces equal to the round number, then push an adjacent unit 1."
+          },
+          {
+            "name": "Sword Art: Safflower cut",
+            "id": "swordArtSafflowerCut",
+            "cost": 2,
+            "timing": "Own or Allied turn.",
+            "description": "Line, Stance: Step 1, then cut a line area with spaces equal to the round number +2, dealing 1 damage to all characters within and pushing those characters 1. Stance (R5+): This damage becomes Devil Damage."
+          },
+          {
+            "name": "Grace",
+            "id": "grace",
+            "cost": 2,
+            "timing": "Own or Allied turn, range 3.",
+            "description": "Trigger: Turn start. Effect: Unit becomes curseproof until end of its next turn and attacks against it gain -1D for the duration."
+          },
+          {
+            "name": "Sword Art: Winter Sprout",
+            "id": "swordArtWinterSprout",
+            "cost": 3,
+            "timing": "Any Turn",
+            "description": "Trigger: This unit takes damage from an ACT ability, and that ability resolves. Effect: Splash (self): remove 1 negative token on self or gain 1 vitality for every foe in the splash area. Stance (R4+): both effects trigger."
+          },
+          {
+            "name": "Supreme Sword Art: Merciful Snowdrop Cut",
+            "id": "supremeSwordArtMercifulSnowdropCut",
+            "cost": 4,
+            "timing": "Own turn",
+            "description": "Effect: Splash (self): 1 holy damage. Stance (R3+): 2 holy damage (R5+): 3 holy damage. (R6+): 4 holy damage."
+          },
+          {
+            "name": "Resurrection",
+            "id": "resurrection",
+            "cost": 6,
+            "timing": "Any turn",
+            "description": "Trigger: Allied unit is slain. Effect: Return unit to life at 1 hp at the end of the turn. It becomes immune to all damage and curseproof until the start of its next turn. Stance (R3+) and it gains 1 vitality (R5+) 3 vitality instead."
+          }
+        ]
       }
     ]
   }

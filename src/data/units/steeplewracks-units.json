@@ -1,0 +1,438 @@
+[
+  {
+    "name": "Flock",
+    "id": "flock",
+    "type": "thrall",
+    "house": "steeplewrack",
+    "mv": 3,
+    "hp": 1,
+    "df": 5,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Endless",
+        "id": "fallToShambles",
+        "description": "For every unit slot spent on Flock, you may summon an additional flock unit in free space adjacent to an allied unit at the end of every round."
+      },
+      {
+        "name": "Thrall",
+        "id": "thrallTrait",
+        "description": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Bloodletting",
+        "id": "bloodletting",
+        "type": "Melee, Attack",
+        "description": "On hit: 1 damage. Rip Apart (3+): ignoring armor."
+      },
+      {
+        "name": "Call to Feast",
+        "id": "callToFeast",
+        "type": "Self",
+        "description": "This unit gains 1 or (6+) 2 speed. It may then immediately spend two speed tokens to summon an additional Flock unit in an adjacent space."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "The Red Wet Hue",
+        "id": "theRedWetHue",
+        "description": "Bloodletting gains Rip Apart (5+): and deal 1 curse damage again"
+      },
+      {
+        "name": "Blood Frenzy",
+        "id": "bloodFrenzy",
+        "description": "At round 5+, become immune to graze, line, and splash damage."
+      },
+      {
+        "name": "Rabid",
+        "id": "rabid",
+        "description": "This faction's dive bomb trait can be used for free on one flock unit a round."
+      }
+    ]
+  },
+  {
+    "name": "Stiltwalker",
+    "id": "stiltwalker",
+    "type": "horror",
+    "house": "steeplewrack",
+    "mv": 4,
+    "hp": 3,
+    "df": 5,
+    "armor": "MAG",
+    "traits": [
+      {
+        "name": "Long Stilts",
+        "id": "longStilts",
+        "description": "May move through walls, but not end its turn in one. When moving through a wall, gain free movement until end of turn."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Prepare the Pole",
+        "id": "prepareThePole",
+        "type": "Self",
+        "description": "Effect: Step 2, then create a wall in a free adjacent space (4+) and gain 1 speed."
+      },
+      {
+        "name": "Hang for the Owls",
+        "id": "hangForTheOwls",
+        "type": "Attack, Melee",
+        "description": "On hit: 2 damage. Rip Apart (3+): ignoring armor, Rip Apart (5+): then 1 damage again and summon a flock unit adjacent to target."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Perching",
+        "id": "perching",
+        "description": "If starting turn adjacent to a wall, gain 1 speed and clear a negative token"
+      },
+      {
+        "name": "Writhing",
+        "id": "writhing",
+        "description": "While adjacent to a wall, damage always ignores vitality and armor."
+      },
+      {
+        "name": "Clinging",
+        "id": "clinging",
+        "description": "While adjacent to a wall, is curseproof."
+      }
+    ]
+  },
+  {
+    "name": "Siren",
+    "id": "siren",
+    "type": "freak",
+    "house": "steeplewrack",
+    "mv": 4,
+    "hp": 3,
+    "df": 5,
+    "armor": "MAG",
+    "traits": [
+      {
+        "name": "Flight",
+        "id": "flight",
+        "description": "Ignores adverse terrain and elevation attack and movement penalties"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Paranoia",
+        "id": "paranoia",
+        "type": "Curse, Range 3",
+        "description": "Effect: Target enemy unit always counts as having +2 of your units adjacent to it, even when alone. This effect lasts until this ability is used again or the Siren is slain."
+      },
+      {
+        "name": "Sonic Screech",
+        "id": "sonicScreech",
+        "type": "Self",
+        "description": "Effects: Splash (self): 1 curse damage. Push all units one (5+) or two spaces."
+      },
+      {
+        "name": "Siren's Song",
+        "id": "sirensSong",
+        "type": "Self",
+        "description": "Effects: Until the start of this unit's next turn, while adjacent to this unit, enemy units take -1D on attacks, and self and allies are immune to graze damage"
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Ear Splitter",
+        "id": "earSplitter",
+        "description": "Sonic screech also grants one or two allies in the area 1 speed or strength."
+      },
+      {
+        "name": "Painful Whispers",
+        "id": "painfulWhispers",
+        "description": "Paranoia deals 1 curse damage, ignoring armor, but only counts as +1 adjacent unit"
+      },
+      {
+        "name": "Lullaby",
+        "id": "lullaby",
+        "description": "When Siren's Song expires, adjacent allies gain 1 speed."
+      }
+    ]
+  },
+  {
+    "name": "Harpy",
+    "id": "harpy",
+    "type": "scion",
+    "house": "steeplewrack",
+    "mv": 4,
+    "hp": 4,
+    "df": 4,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Feral Dodge",
+        "id": "feralDodge",
+        "description": "May spend a speed token when attacked by an ACT ability to give the attacker -1D on the attack roll and step 1 after the ability resolves."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Disembowel",
+        "id": "disembowel",
+        "type": "Melee, Attack",
+        "description": "On hit: 1 damage. Rip Apart (3+): +1 damage and gain 1 speed, Rip Apart (5+): and gain 1 strength and summon a Flock unit in free space adjacent to the target."
+      },
+      {
+        "name": "Raise Roost",
+        "id": "raiseRoost",
+        "type": "Range 3",
+        "description": "Effect: Create a wall in range, then grant 1 speed to one (3+) or two, (5+) or all allied units to the wall."
+      },
+      {
+        "name": "Cannibalize",
+        "id": "cannibalize",
+        "type": "Melee",
+        "description": "Effect: Slay an adjacent allied unit. This unit gains 1 strength, 1 speed, and may MOVE again"
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Sinew",
+        "id": "sinew",
+        "description": "At 1 hp or lower, this unit is immune to damage from grazes, lines, and splash effects"
+      },
+      {
+        "name": "Voracious",
+        "id": "voracious",
+        "description": "Cannibalize can also be used on an enemy unit at 1 hp or lower, but does not grant tokens if used this way"
+      },
+      {
+        "name": "The Noose",
+        "id": "theNoose",
+        "description": "Raise Roost gains +1 range and when it creates a wall, it may first pull a unit in range 2 one space."
+      }
+    ]
+  },
+  {
+    "name": "Carniphagous Owl",
+    "id": "carniphagousOwl",
+    "type": "tyrant",
+    "house": "steeplewrack",
+    "mv": 4,
+    "hp": 5,
+    "df": 4,
+    "armor": "SUPER",
+    "traits": [
+      {
+        "name": "Circling",
+        "id": "circling",
+        "description": "Starts combat with 4 mutation tokens"
+      },
+      {
+        "name": "Flesh Sacrifice",
+        "id": "fleshSacrifice",
+        "description": "Counts as two allies units for the purposes of Rip Apart, but not to itself."
+      },
+      {
+        "name": "Tyrant",
+        "id": "tyrantTrait",
+        "description": "2x2 unit"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Guzzle",
+        "id": "guzzle",
+        "type": "Attack, Melee",
+        "description": "On hit: 2 damage. Rip Apart (3+): +1 damage. Rip Apart (5+): +1 damage, and obliterate target if it is slain."
+      },
+      {
+        "name": "Fleshgorger",
+        "id": "fleshgorger",
+        "type": "Self, Splash",
+        "description": "Splash (self): 1 damage. Then, for every unit slain, clear one token, and gain 1 speed or strength. Then, step 1 per unit slain, and may destroy walls during this movement."
+      },
+      {
+        "name": "Concussive Shriek",
+        "id": "concussiveShriek",
+        "type": "Range 2-4",
+        "description": "Splash (target): Deal 1 curse damage once, to a unit in the area for each wall in the area. The same unit can be targeted more than once."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Machineheart",
+        "id": "machineheart",
+        "description": "When it first arrives, the Owl may slay all adjacent allied units, gaining 1 speed or strength for each."
+      },
+      {
+        "name": "Sleek Owl",
+        "id": "sleekOwl",
+        "description": "The Owl becomes a 1x1 unit and gains free movement."
+      },
+      {
+        "name": "Bone Resonance",
+        "id": "boneResonance",
+        "description": "Concussive shriek also slays allied units in the area, counting each as a wall for purposes of the ability."
+      }
+    ]
+  },
+  {
+    "name": "Haruspex",
+    "id": "haruspex",
+    "type": "necromancer",
+    "house": "steeplewrack",
+    "mv": 4,
+    "hp": 8,
+    "df": 5,
+    "armor": "",
+    "traits": [
+      {
+        "name": "Flesh Sacrifice",
+        "id": "fleshSacrifice",
+        "description": "Counts as two allies units for the purposes of Rip Apart, but not to itself."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "The Knife",
+        "id": "theKnife",
+        "type": "Attack, Melee",
+        "description": "On hit: 1 damage. Rip Apart (3+): 1 damage again, (5+) and again, (7+) and again, (8+) and again."
+      }
+    ],
+    "soulAbilities": [
+      {
+        "name": "Call Flock",
+        "id": "callFlock",
+        "cost": 1,
+        "timing": "Own or Allied Turn, Range 2.",
+        "description": "Trigger: End of turn. Effect: Summon one, (4+) two, (6+) or three flock thralls in range."
+      },
+      {
+        "name": "Fresh Meat",
+        "id": "freshMeat",
+        "cost": 3,
+        "timing": "Own or Allied Turn, range 3.",
+        "description": "Effect: Slay an allied unit in range. Up to three allies adjacent to the slain unit and self gain 1 strength and may clear a negative token."
+      }
+    ],
+    "upgrades": [
+      {
+        "type": "trait",
+        "upgrade": [
+          {
+            "name": "Red Communion",
+            "id": "redCommunion",
+            "description": "Allied units may trigger 'slay unit' or 'slay allied unit' effects on you by dealing 1 devil damage to you instead."
+          },
+          {
+            "name": "Slaughter Frenzy",
+            "id": "slaughterFrenzy",
+            "description": "When an adjacent allied unit is slain, gain 1 strength. This effect can only trigger once a round."
+          },
+          {
+            "name": "Priest of the Hue",
+            "id": "priestOfTheHue",
+            "description": "When an adjacent allied unit is slain, summon a flock unit in a free adjacent space. This effect can only trigger once a round."
+          }
+        ]
+      },
+      {
+        "type": "ability",
+        "upgrade": [
+          {
+            "name": "Bloody Haze",
+            "id": "bloodyHaze",
+            "type": "Self",
+            "description": "Effect: Until start of this unit’s next turn, all attacks against self and all units adjacent to this unit ignore armor and grant the attacker 1 strength after they resolve."
+          },
+          {
+            "name": "Flesh Hunt",
+            "id": "fleshHunt",
+            "type": "Range 4.",
+            "description": "Effect: All allied units in range 2 of target foe are pushed 1 towards that foe (4+) and gain 1, (6+) or 2 strength."
+          },
+          {
+            "name": "Call Watcher Owl",
+            "id": "callWatcherOwl",
+            "type": "Range 3.",
+            "description": "Effect: Target a wall in range. That wall becomes immune to all damage, and counts as +1 ally for the purposes of Rip Apart. This ability lasts until used again."
+          },
+          {
+            "name": "Darken Skies",
+            "id": "darkenSkies",
+            "type": "Self.",
+            "description": "Effect: Until start of this unit’s next turn, cannot MOVE or step but self and adjacent allies gain cover from all directions and immunity to grazes."
+          },
+          {
+            "name": "Bloody Rain",
+            "id": "bloodyRain",
+            "type": "Range 3.",
+            "description": "Effect: Slay allied unit in range. Then summon a flock unit in range for every hp it is missing."
+          },
+          {
+            "name": "The Hook",
+            "id": "theHook",
+            "type": "Attack, Melee.",
+            "description": "On hit: 1 curse damage. Effect: Summon one or (5+) two flock units adjacent to the target."
+          },
+          {
+            "name": "The Rope",
+            "id": "theRope",
+            "type": "Attack, range 3-4.",
+            "description": "On hit: 1 damage, which cannot be reduced in any way. Effect: Then may pull self 2 towards a wall in range 3, or pull target 2 towards self or a wall in range 3."
+          },
+          {
+            "name": "The Pole",
+            "id": "thePole",
+            "type": "Attack, range 2.",
+            "description": "On hit: 2 damage. Effect: May step 2 after attack with free movement, and may pass through walls during this movement."
+          }
+        ]
+      },
+      {
+        "type": "soulAbility",
+        "upgrade": [
+          {
+            "name": "Sudden Twitching",
+            "id": "suddenTwitching",
+            "cost": 1,
+            "timing": "Own or allied turn. Range 3.",
+            "description": "Trigger: End of turn. Effect: Self or an allied unit in range gains 1 speed and steps 2. They may pass through walls during this step."
+          },
+          {
+            "name": "Carrion Leap",
+            "id": "carrionLeap",
+            "cost": 2,
+            "timing": "Foe Turn, foe is in range 3.",
+            "description": "Trigger: Turn start. Effect: Remove this unit from the battlefield. At the end of the triggering turn, place self in a free space adjacent to the triggering foe and gain 1 speed."
+          },
+          {
+            "name": "Raptor Spasm",
+            "id": "raptorSpasm",
+            "cost": 2,
+            "timing": "Any Turn, Range 3.",
+            "description": "Trigger: Self or ally in range is targeted by a line or splash effect. Effect: Reduce all damage taken by the targeted unit from the effect by 1 and the targeted unit becomes immune to any tokens or effects it would inflict."
+          },
+          {
+            "name": "Impale",
+            "id": "impale",
+            "cost": 3,
+            "timing": "Own or Allied turn, range 2-3.",
+            "description": "Trigger: Turn end. Effect: Place a wall in free space adjacent to a foe in range. Until the end of its next turn or until that wall is destroyed, that unit cannot break adjacency to the wall for any reason."
+          },
+          {
+            "name": "Carrion Burial",
+            "id": "carrionBurial",
+            "cost": 4,
+            "timing": "Foe turn, Range 3. Curse.",
+            "description": "Trigger: Turn start. Effect: Summon a flock unit in free adjacent space to that unit. At the start of that unit’s turn for the rest of combat, repeat this effect. End this effect if the unit is slain or they become curseproof."
+          },
+          {
+            "name": "Rapture of the Red Wet Hue",
+            "id": "raptureOfTheRedWetHue",
+            "cost": 6,
+            "timing": "Own turn",
+            "description": "Effect: For the rest of combat, all allied units double their MV stat, Dive Bomb can be used twice per round instead of just once, and units may deal 1 damage to an adjacent unit when they Dive Bomb."
+          }
+        ]
+      }
+    ]
+  }
+]

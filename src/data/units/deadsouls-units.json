@@ -51,5 +51,370 @@
         "description": "Beckon inflicts 1 weak on isolated units."
       }
     ]
+  },
+  {
+    "name": "Chosen",
+    "id": "chosen",
+    "type": "scion",
+    "house": "deadsouls",
+    "mv": 4,
+    "hp": 3,
+    "df": 5,
+    "armor": "MAG",
+    "traits": [
+      {
+        "name": "Slither",
+        "id": "invertedCrucifix",
+        "description": "Has free movement while adjacent to a wall"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Tombraiser",
+        "id": "tombraiser",
+        "type": "Melee",
+        "description": "Effect: Create a wall (3+) then create adverse terrain (5+) then create adverse terrain again."
+      },
+      {
+        "name": "Kidnap",
+        "id": "kidnap",
+        "type": "Curse, Range 2-4",
+        "description": "Curset: Pull 1, ignoring line of sight. If pulling a unit into a wall, pull 3 instead and the kidnapped unit can pass through walls and units during this pull."
+      },
+      {
+        "name": "Serpent's Kiss",
+        "id": "serpentsKiss",
+        "type": "Attack, melee",
+        "description": "On hit: 1 damage. Effect: Inflicts 1 curse damage and 1 weak against isolated units (4+) and Dooms them."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Ivory Serpent",
+        "id": "ivorySerpent",
+        "description": "Serpent's Kiss also triggers its effects against units standing in adverse terrain"
+      },
+      {
+        "name": "Leap",
+        "id": "leap",
+        "description": "May step 1 before ACTing, or step 2 and clear a token if adjacent to a wall"
+      },
+      {
+        "name": "Foul Monuments",
+        "id": "foulMonuments",
+        "description": "Tombraiser gains range 3"
+      }
+    ]
+  },
+  {
+    "name": "Vizigheist",
+    "id": "vizigheist",
+    "type": "horror",
+    "house": "deadsouls",
+    "mv": 4,
+    "hp": 3,
+    "df": 5,
+    "armor": "MAG",
+    "traits": [
+      {
+        "name": "Teleport",
+        "id": "teleport",
+        "description": "When MOVEing a second time or more in a turn, may instead remove self from the battlefield, then place anywhere in free space in range 4"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Horrendous Shriek",
+        "id": "horrendousShriek",
+        "type": "Curse, Self",
+        "description": "Curse: Splash (self): foes gain 1 weak. (5+): and are Doomed. Doomed units take 1 curse damage."
+      },
+      {
+        "name": "Urgal Blade",
+        "id": "urgalBlade",
+        "type": "Attack, Melee",
+        "description": "On hit: 2 curse damage. Effect: Against isolated units, gain 1 strength and may then MOVE again."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Terrorize",
+        "id": "terrorize",
+        "description": "Gain 2 strength if Horrendous Shriek hits an isolated foe."
+      },
+      {
+        "name": "Soul Frost",
+        "id": "soulFrost",
+        "description": "When teleporting, create a space of adverse terrain in the first space vacated."
+      },
+      {
+        "name": "Condemn",
+        "id": "condemn",
+        "description": "Shriek obliterates Doomed units at 1 hp or lower."
+      }
+    ]
+  },
+  {
+    "name": "Banshee",
+    "id": "banshee",
+    "type": "hunter",
+    "house": "deadsouls",
+    "mv": 3,
+    "hp": 3,
+    "df": 5,
+    "armor": "MAG",
+    "traits": [
+      {
+        "name": "Soul Sight",
+        "id": "soulSight",
+        "description": "Abilities ignore line of sight"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Bale Scream",
+        "id": "baleScream",
+        "type": "Line 4",
+        "description": "Effect: Line: 1 curse damage. Isolated units take 1 curse damage again. May penetrate walls and does not damage walls. Effect: If this line passes through a wall, this unit gains 1 strength."
+      },
+      {
+        "name": "Tombstone",
+        "id": "tombstone",
+        "type": "Range 4",
+        "description": "Effect: Create a wall in range and (5+) adjacent foes to the wall gain 1 weak."
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "Doom Bell",
+        "id": "doomBell",
+        "description": "Tombstone gains effect (6+): adjacent foes are Doomed"
+      },
+      {
+        "name": "Freeze Soul",
+        "id": "freezeSoul",
+        "description": "If Bale Scream slays a unit, it creates a space of adverse terrain instead of a corpse."
+      },
+      {
+        "name": "Siren",
+        "id": "siren",
+        "description": "Bale Scream pulls all units in its area 1."
+      }
+    ]
+  },
+  {
+    "name": "Bound Devil",
+    "id": "boundDevil",
+    "type": "tyrant",
+    "house": "deadsouls",
+    "mv": 3,
+    "hp": 6,
+    "df": 2,
+    "armor": "MAG",
+    "traits": [
+      {
+        "name": "Labyrinth Master",
+        "id": "labyrinthMaster",
+        "description": "Before MOVEing, may remove and place one adjacent wall in any other free adjacent space."
+      },
+      {
+        "name": "Tyrant",
+        "id": "tyrantTrait",
+        "description": "2x2 unit"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Hell's Grasp",
+        "id": "hellsGrasp",
+        "type": "Curse, Range 4, requires isolated unit",
+        "description": "Effect: Choose an isolated unit. That unit gains 1 weak and may no longer MOVE or step until the end of its next turn or until it's no longer isolated."
+      },
+      {
+        "name": "Beckon Lamb",
+        "id": "beckonLamb",
+        "type": "Curse, Range 2-4, requires isolated unit",
+        "description": "Effect: Unit gains 2 weak and is pulled 3."
+      },
+      {
+        "name": "Horrendous End",
+        "id": "horrendousEnd",
+        "type": "Melee, Attack",
+        "description": "On hit: Deals 1 damage, +1 for each of the following that is true about the target: Doomed, Isolated, Weak, In adverse terrain"
+      }
+    ],
+    "upgrades": [
+      {
+        "name": "To the Slaughter",
+        "id": "toTheSlaughter",
+        "description": "Beckon Lamb has no maximum range against Doomed units"
+      },
+      {
+        "name": "Supremacy",
+        "id": "supremacy",
+        "description": "Attacks against other Tyrants cannot have their damage reduced and obliterate their targets instead of slaying them."
+      },
+      {
+        "name": "Strong Pact",
+        "id": "strongPact",
+        "description": "This unit is curseproof"
+      }
+    ]
+  }, {
+    "name": "Dark Priest",
+    "id": "darkPriest",
+    "type": "necromancer",
+    "house": "deadsouls",
+    "mv": 4,
+    "hp": 8,
+    "df": 4,
+    "armor": "MAG",
+    "traits": [
+      {
+        "name": "Dread Presence",
+        "id": "dreadPresence",
+        "description": "May move through walls. Isolated units gain -1D on attacks against this unit."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Doomblade",
+        "id": "doomblade",
+        "type": "Attack, range 2",
+        "description": "On hit: 1 curse damage, or 2 curse damage against Doomed foes. Effect: Isolated foes are then Doomed."
+      }
+    ],
+    "soulAbilities": [
+      {
+        "name": "Cyclopean Monolith",
+        "id": "cyclopeanMonolith",
+        "cost": 1,
+        "timing": "Own or allied turn. Range 2-3. Trigger: Start of turn.",
+        "description": "Effect: Create a wall in range and inflict 1 weak on an adjacent foe to the wall."
+      },
+      {
+        "name": "Soulfeed",
+        "id": "soulfeed",
+        "cost": 3,
+        "timing": "Self or Allied Turn. Range 2.",
+        "description": "Effect: All isolated foes in range take 1 curse damage, gain 1 weak, and this unit gains 1 strength for each of these foes."
+      }
+    ],
+    "upgrades": [
+      {
+        "type": "trait",
+        "upgrade": [
+          {
+            "name": "Teleport",
+            "id": "teleport",
+            "description": "When MOVEing the second time or more in a turn, can remove this unit from the battlefield and place it in any free space in range 4, then clear a token."
+          },
+          {
+            "name": "Puppet Master",
+            "id": "puppetMaster",
+            "description": "May use body block from within range 2 instead of adjacent."
+          },
+          {
+            "name": "Maggot Destroyer",
+            "id": "maggotDestroyer",
+            "description": "+1D on attacks and ignores cover against Doomed units"
+          }
+        ]
+      },
+      {
+        "type": "ability",
+        "upgrade": [
+          {
+            "name": "Unholy Summoning",
+            "id": "unholySummoning",
+            "type": "Curse, Range 4.",
+            "description": "Effect: Pull 2. Ignores line of sight. If the unit is an ally, may then pull another allied unit and clear a token on both allies."
+          },
+          {
+            "name": "Vapor Form",
+            "id": "vaporForm",
+            "type": "Self",
+            "description": "Effect: MOVE with free movement, moving through walls and units. Units passed through gain 1 weak. Doomed units take 1 curse damage."
+          },
+          {
+            "name": "Tear Soul",
+            "id": "tearSoul",
+            "type": "Curse, Range 4.",
+            "description": "Effect: Unit takes 1 curse damage. Then, it gains 1 weak for every 1 hp it is missing."
+          },
+          {
+            "name": "Frozen Hell",
+            "id": "frozenHell",
+            "type": "Range 2.",
+            "description": "Create up to three spaces of adverse terrain in range. Units standing in adverse terrain in range take 1 damage."
+          },
+          {
+            "name": "Great Urgal Blade",
+            "id": "greatUrgalBlade",
+            "type": "Melee, Attack.",
+            "description": "On hit: 1 damage. Effect: At round 4 or later, deals 4 curse damage on hit instead."
+          },
+          {
+            "name": "Bloody Flail",
+            "id": "bloodyFlail",
+            "type": "Attack, range 2-2.",
+            "description": "On hit: 1 damage. Effect: Pull all foes in range 1 space, then splash (self): 1 curse damage. Against doomed units, damage cannot be reduced in any way."
+          },
+          {
+            "name": "Lathean Devil Whip",
+            "id": "latheanDevilWhip",
+            "type": "Attack, range 2-3.",
+            "description": "On hit: 1 curse damage. Effect: Cannot benefit from strength. Instead, may remove up to three weak tokens from target to increase curse damage by +1 per weak token removed."
+          }
+        ]
+      },
+      {
+        "type": "soulAbility",
+        "upgrade": [
+          {
+            "name": "Twist Sinews",
+            "id": "twistSinews",
+            "cost": 1,
+            "timing": "Curse, Any turn. Range 2-4.",
+            "description": "Trigger: Start of turn. Effect: Pull unit 1 in any direction."
+          },
+          {
+            "name": "Writhing Curse",
+            "id": "writhingCurse",
+            "cost": 1,
+            "timing": "Foe turn, Curse, Range 4.",
+            "description": "Trigger: Turn start. Effect: At the end of their turn, foe inflicts splash (self) 1 curse damage and 1 weak, only affecting their allies."
+          },
+          {
+            "name": "Disincorporate",
+            "id": "disincorporate",
+            "cost": 2,
+            "timing": "Own or allied turn.",
+            "description": "Effect: Remove self and an adjacent allied unit, then place self in free space in range 3, then place ally adjacent. If there is no room to place allies, return them at their original location."
+          },
+          {
+            "name": "Eternal Curse",
+            "id": "eternalCurse",
+            "cost": 3,
+            "timing": "Any Turn.",
+            "description": "Trigger: A unit is slain. Effect: Transfer all negative tokens to a different unit anywhere."
+          },
+          {
+            "name": "Malebolge",
+            "id": "malebolge",
+            "cost": 4,
+            "timing": "Own turn",
+            "description": "Effect: Scour the battlefield with frozen wind, pulling all foes 1 space in the same direction. Foes that would be pulled into walls or adverse terrain take 1 damage."
+          },
+          {
+            "name": "Great Satania",
+            "id": "greatSatania",
+            "cost": 6,
+            "timing": "Own turn, Range 2.",
+            "description": "Effect: Doom all enemy units in range. All Doomed enemy units instead take 1 curse damage, once, per Doom token they have."
+          }
+        ]
+      }
+    ]
   }
 ]
